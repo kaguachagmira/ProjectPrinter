@@ -29,7 +29,7 @@ namespace ProjectPrinter
             objCuadrado.LeerDatos(txtLado);
             objCuadrado.AreayPerimetro();
             objCuadrado.Imprimir(txtPerimetro, txtArea);
-            objCuadrado.graficadora(picSquare);
+            objCuadrado.Creadora(picSquare);
 
         }
     }
