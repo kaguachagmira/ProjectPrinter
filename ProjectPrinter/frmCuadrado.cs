@@ -29,7 +29,36 @@ namespace ProjectPrinter
             objCuadrado.LeerDatos(txtLado);
             objCuadrado.AreayPerimetro();
             objCuadrado.Imprimir(txtPerimetro, txtArea);
-            objCuadrado.Creadora(picSquare);
+            objCuadrado.Creadora(picSquare,comboBox1);
+        }
+
+        private void picSquare_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
