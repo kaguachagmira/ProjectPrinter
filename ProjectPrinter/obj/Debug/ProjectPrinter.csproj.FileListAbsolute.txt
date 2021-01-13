@@ -9,3 +9,6 @@ C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPr
 C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPrinter\obj\Debug\ProjectPrinter.csproj.CoreCompileInputs.cache
 C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPrinter\obj\Debug\ProjectPrinter.exe
 C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPrinter\obj\Debug\ProjectPrinter.pdb
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPrinter\bin\Debug\Utilidades.dll
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPrinter\bin\Debug\Utilidades.pdb
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPrinter\obj\Debug\ProjectPrinter.csproj.CopyComplete

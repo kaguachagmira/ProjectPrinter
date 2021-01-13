@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Threading;
+using System.Diagnostics;
+using Utilidades;
 
 namespace ProjectPrinter
 {
@@ -19,9 +21,11 @@ namespace ProjectPrinter
         private float mPerimetro;
         private float mArea;
         //Variables para el modo grafico
-        private Graphics mGraficos;
+        private Graphics mGraficosX;
+        private Graphics mGraficosY;
+        private Graphics mGraficosZ;
         //Factor de escalamiento
-        private const float SF = 20;
+        private const float SF = 10;
         //Variables para dibujar
         private Pen mPen;
         private int posicion = 0;
@@ -81,52 +85,151 @@ namespace ProjectPrinter
             mB.X = (mLado * SF) + CENTRADOX;
             mB.Y = 0.0f + CENTRADOY;
 
-            mC.X = (mLado * SF) + CENTRADOX;
-            mC.Y = (mLado * SF) + CENTRADOY;
-
-            mD.X = (0.0f * SF) + CENTRADOX;
+            mD.X = (mLado * SF) + CENTRADOX;
             mD.Y = (mLado * SF) + CENTRADOY;
+
+            mC.X = (0.0f * SF) + CENTRADOX;
+            mC.Y = (mLado * SF) + CENTRADOY;
         }
-        public void PuntosGraficaVertical()
+        public void CreadoraRelleno(PictureBox cuadradoZ, PictureBox cuadradoX, PictureBox cuadradoY, ComboBox color)
         {
-            for (float i = 0.0f; i < mLado; i= i+  0.1f)
-            {
-                PuntosT.Add(new PointF((i*SF)+ CENTRADOX, (0.0f * SF)+ CENTRADOY));
-                PuntosB.Add(new PointF((i * SF)+ CENTRADOX, (mLado * SF)+ CENTRADOY));
-                posicion++;
-            }
-            posicion = posicion - 1;
+            Thread.CurrentThread.IsBackground = true;
+            Thread graficoZR = new Thread(new ThreadStart(() => GraficadoraRellenoZ(cuadradoZ,cuadradoX,cuadradoY, color)));
+            //Thread graficoYR = new Thread(new ThreadStart(() => GraficadoraRellenoY(cuadradoY,color)));
+            graficoZR.Start();
+
         }
-        public void Creadora(PictureBox cuadrado, ComboBox color)
+        public void CreadoraContorno(PictureBox cuadradoZ, PictureBox cuadradoX, PictureBox cuadradoY, ComboBox color)
         {
-            myPic = cuadrado;
+            myPic = cuadradoZ;
             PuntosPerfil();
-            PuntosGraficaVertical();
-            Thread graficoZ = new Thread(new ThreadStart(() => Graficadora(cuadrado, color)));
-            graficoZ.Start();
+            Thread graficoZC = new Thread(new ThreadStart(() => GraficadoraContorno(cuadradoZ, cuadradoX, cuadradoY, color)));
+            graficoZC.Start();
+            graficoZC.Join();
         }
-        public void Graficadora(PictureBox cuadrado, ComboBox color)
+        public void GraficadoraContorno(PictureBox cuadradoZ, PictureBox cuadradoX, PictureBox cuadradoY, ComboBox color)
         {
-            mGraficos = cuadrado.CreateGraphics();
+            //CONTORNO PERSPECTIVA Z
+            mGraficosZ = cuadradoZ.CreateGraphics();
+            mGraficosX = cuadradoX.CreateGraphics();
+            mGraficosY = cuadradoY.CreateGraphics();
 
             mPen = SeleccionarColor(color);
-            //Dibujo del cuadrado
-            mGraficos.DrawLine(mPen, mA, mB);
-            mGraficos.DrawLine(mPen, mB, mC);
-            mGraficos.DrawLine(mPen, mC, mD);
-            mGraficos.DrawLine(mPen, mD, mA);
-            //Relleno del cuadrado
-            for (int i = 0; i < posicion; i++)
+            mGraficosZ.DrawLine(mPen, mA, mB);
+            mGraficosZ.DrawLine(mPen, mA, mC);
+            mGraficosZ.DrawLine(mPen, mB, mD);
+            mGraficosZ.DrawLine(mPen, mD, mC);
+            //CONTORNO PERSPECTIVA X
+            mGraficosX.DrawLine(mPen, mA, mB);
+            //CONTORNO PERSPECTIVA Y
+            mGraficosY.DrawLine(mPen, mC, mD);
+
+        }
+        public void GraficadoraRellenoZ(PictureBox cuadradoZ, PictureBox cuadradoX, PictureBox cuadradoY, ComboBox color)
+        {
+            int verificador = 0;
+            mGraficosZ = cuadradoZ.CreateGraphics();
+            mGraficosY = cuadradoY.CreateGraphics();
+            mGraficosX = cuadradoX.CreateGraphics();
+            int rango = (int)mLado * 10;
+            //Z
+            PointF[] PuntosT1;
+            PointF[] PuntosB1;
+
+            PuntosT1 = LinePoints.ObtenerPuntos(mA, mB, rango);
+            PuntosB1 = LinePoints.ObtenerPuntos(mC, mD, rango);
+
+
+            //Y
+            PointF[] PuntosL;
+            PointF[] PuntosR;
+            PuntosL = LinePoints.ObtenerPuntos(mA, mC, rango);
+            PuntosR = LinePoints.ObtenerPuntos(mB, mD, rango);
+            PointF[] PuntosEntreLineas;
+
+           
+            do
             {
-                Thread.Sleep(200);
-                mGraficos.DrawLine(mPen, PuntosT[i], PuntosB[i]);
+                mPen = SeleccionarColor(color);
+                PuntosEntreLineas = LinePoints.ObtenerPuntos(PuntosL[verificador], PuntosR[verificador], rango);
+                for (int i = 0; i < rango; i++)
+                {
+                    //Z
+                    Thread.Sleep(20);
+                    mGraficosZ.DrawLine(mPen, PuntosT1[i], PuntosB1[i]);
+                    //Y
+                    Point pixel = new Point();
+                    pixel.X = (int)PuntosEntreLineas[i].X;
+                    pixel.Y = (int)PuntosEntreLineas[i].Y;
+                    Rectangle rect = new Rectangle(pixel, new Size(2, 2));
+                    mGraficosY.DrawRectangle(mPen, rect);
+                }
+                //X
+                mGraficosX.DrawLine(mPen, PuntosL[verificador], PuntosR[verificador]);
+                //GraficadoraRellenoX(cuadradoX, cuadradoY, color, verificador);
+                verificador++;
+            } while (verificador != rango);
+
+        }
+        public void GraficadoraRellenoX(PictureBox cuadradoX, PictureBox cuadradoY, ComboBox color, int capas)
+        {
+            mGraficosX = cuadradoX.CreateGraphics();
+            int rango = (int)mLado * 10;
+            PointF[] PuntosL;
+            PointF[] PuntosR;
+            PointF Puntos;
+
+            PuntosL = LinePoints.ObtenerPuntos(mA,mC,rango);
+            PuntosR = LinePoints.ObtenerPuntos(mB,mD,rango);
+
+            for (int i = 0; i <=capas; i++)
+            {
+                mGraficosX.DrawLine(mPen, PuntosR[i], PuntosL[i]);
             }
-            PuntosB.Clear();
-            PuntosT.Clear();
-            posicion = 0;
+
+        }
+        public void GraficadoraRellenoY(PictureBox cuadradoY, ComboBox color)
+        {
+            mGraficosY = cuadradoY.CreateGraphics();
+            int rango = (int)mLado * 10;
+            PointF[] PuntosL;
+            PointF[] PuntosR;
+            PuntosL = LinePoints.ObtenerPuntos(mA, mC, rango);
+            PuntosR = LinePoints.ObtenerPuntos(mB, mD, rango);
+
+            PointF[] PuntosEntreLineas;
+
+            for (int i = 0; i < rango; i++)
+            {
+                PuntosEntreLineas = LinePoints.ObtenerPuntos(PuntosL[i], PuntosR[i], rango);
+                for (int j = 0; j < rango; j++)
+                {
+                    Point pixel = new Point();
+                    pixel.X = (int)PuntosEntreLineas[j].X;
+                    pixel.Y = (int)PuntosEntreLineas[j].Y;
+                    Rectangle rect = new Rectangle(pixel, new Size(2, 2));
+                    Thread.Sleep(20);
+                    mGraficosY.DrawRectangle(mPen, rect);
+                }
+            }
         }
         public Pen SeleccionarColor(ComboBox color)
         {
+            var random = new Random();
+            int aleatorio = random.Next(1, 5);
+            
+            if (aleatorio == 1)
+            return new Pen(Color.Blue, 3);
+            if (aleatorio == 2)
+            return new Pen(Color.Red, 3);
+            if (aleatorio == 3)
+            return new Pen(Color.FromArgb(66, 230, 245), 3);
+            if (aleatorio == 4)
+            return new Pen(Color.Green, 3);
+            if (aleatorio == 5)
+            return new Pen(Color.Brown, 3);
+            return new Pen(Color.Black, 3);
+            /*
             if (color.SelectedItem == "Azul")
                 return new Pen(Color.Blue, 3);
             if (color.SelectedItem == "Rojo")
@@ -137,7 +240,8 @@ namespace ProjectPrinter
                 return new Pen(Color.Green, 3);
             if (color.SelectedItem == "Café")
                 return new Pen(Color.Brown, 3);
-            return new Pen(Color.Black,3);
+            return new Pen(Color.Black, 3);*/
         }
     }
+    
 }

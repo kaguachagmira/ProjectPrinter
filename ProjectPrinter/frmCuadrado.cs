@@ -16,7 +16,9 @@ namespace ProjectPrinter
         public frmCuadrado()
         {
             InitializeComponent();
-            objCuadrado.InicializaDatos(txtLado, txtPerimetro, txtArea, picSquare);
+            objCuadrado.InicializaDatos(txtLado, txtPerimetro, txtArea, picSquareZ);
+            this.btnContorno.Enabled = !string.IsNullOrWhiteSpace(this.txtLado.Text);
+            this.btnGraficar.Enabled = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -29,7 +31,7 @@ namespace ProjectPrinter
             objCuadrado.LeerDatos(txtLado);
             objCuadrado.AreayPerimetro();
             objCuadrado.Imprimir(txtPerimetro, txtArea);
-            objCuadrado.Creadora(picSquare,comboBox1);
+            objCuadrado.CreadoraRelleno(picSquareZ,picSquareX,picSquareY,comboColor);
         }
 
         private void picSquare_Click(object sender, EventArgs e)
@@ -60,6 +62,25 @@ namespace ProjectPrinter
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            btnGraficar.Enabled = true;
+            objCuadrado.LeerDatos(txtLado);
+            objCuadrado.AreayPerimetro();
+            objCuadrado.Imprimir(txtPerimetro, txtArea);
+            objCuadrado.CreadoraContorno(picSquareZ, picSquareX, picSquareY, comboColor);
+        }
+
+        private void frmCuadrado_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLado_TextChanged(object sender, EventArgs e)
+        {
+            this.btnContorno.Enabled = !string.IsNullOrWhiteSpace(this.txtLado.Text);
         }
     }
 }

@@ -27,5 +27,10 @@ namespace ProjectPrinter
             frmCuadrado cuadradoImpresion = new frmCuadrado();
             cuadradoImpresion.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

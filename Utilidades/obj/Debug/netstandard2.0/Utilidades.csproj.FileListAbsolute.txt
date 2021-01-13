@@ -1,0 +1,9 @@
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\Utilidades\bin\Debug\netstandard2.0\Utilidades.deps.json
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\Utilidades\bin\Debug\netstandard2.0\Utilidades.dll
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\Utilidades\bin\Debug\netstandard2.0\Utilidades.pdb
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\Utilidades\obj\Debug\netstandard2.0\Utilidades.csprojAssemblyReference.cache
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\Utilidades\obj\Debug\netstandard2.0\Utilidades.AssemblyInfoInputs.cache
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\Utilidades\obj\Debug\netstandard2.0\Utilidades.AssemblyInfo.cs
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\Utilidades\obj\Debug\netstandard2.0\Utilidades.csproj.CoreCompileInputs.cache
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\Utilidades\obj\Debug\netstandard2.0\Utilidades.dll
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\Utilidades\obj\Debug\netstandard2.0\Utilidades.pdb
