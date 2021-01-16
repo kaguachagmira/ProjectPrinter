@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectPrinter", "ProjectPrinter\ProjectPrinter.csproj", "{1F869EC6-33E0-4BEF-9FE8-BF6C780569AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilidades", "Utilidades\Utilidades.csproj", "{6739E538-051B-477F-983D-9A3931836506}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utilidades", "Utilidades\Utilidades.csproj", "{6739E538-051B-477F-983D-9A3931836506}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

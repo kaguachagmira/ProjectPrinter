@@ -12,7 +12,7 @@ using Utilidades;
 
 namespace ProjectPrinter
 {
-    class LogicaCuadrado
+    public class LogicaCuadrado
     {
         //Variables para el cuadrado
         const int CENTRADOX = 30;
@@ -91,28 +91,26 @@ namespace ProjectPrinter
             mC.X = (0.0f * SF) + CENTRADOX;
             mC.Y = (mLado * SF) + CENTRADOY;
         }
-        public void CreadoraRelleno(PictureBox cuadradoZ, PictureBox cuadradoX, PictureBox cuadradoY, ComboBox color)
+        public void CreadoraRelleno(PictureBox[] pictureBoxes, ComboBox color, ListBox[] listas)
         {
             Thread.CurrentThread.IsBackground = true;
-            Thread graficoZR = new Thread(new ThreadStart(() => GraficadoraRellenoZ(cuadradoZ,cuadradoX,cuadradoY, color)));
-            //Thread graficoYR = new Thread(new ThreadStart(() => GraficadoraRellenoY(cuadradoY,color)));
+            Thread graficoZR = new Thread(new ThreadStart(() => GraficadoraRellenoZ(pictureBoxes, color, listas)));
             graficoZR.Start();
-
+            graficoZR.Join();
         }
-        public void CreadoraContorno(PictureBox cuadradoZ, PictureBox cuadradoX, PictureBox cuadradoY, ComboBox color)
+        public void CreadoraContorno(PictureBox[] pictureBoxes, ComboBox color)
         {
-            myPic = cuadradoZ;
             PuntosPerfil();
-            Thread graficoZC = new Thread(new ThreadStart(() => GraficadoraContorno(cuadradoZ, cuadradoX, cuadradoY, color)));
+            Thread graficoZC = new Thread(new ThreadStart(() => GraficadoraContorno(pictureBoxes, color)));
             graficoZC.Start();
             graficoZC.Join();
         }
-        public void GraficadoraContorno(PictureBox cuadradoZ, PictureBox cuadradoX, PictureBox cuadradoY, ComboBox color)
+        public void GraficadoraContorno(PictureBox[] pictureBoxes, ComboBox color)
         {
             //CONTORNO PERSPECTIVA Z
-            mGraficosZ = cuadradoZ.CreateGraphics();
-            mGraficosX = cuadradoX.CreateGraphics();
-            mGraficosY = cuadradoY.CreateGraphics();
+            mGraficosZ = pictureBoxes[0].CreateGraphics();
+            mGraficosX = pictureBoxes[1].CreateGraphics();
+            mGraficosY = pictureBoxes[2].CreateGraphics();
 
             mPen = SeleccionarColor(color);
             mGraficosZ.DrawLine(mPen, mA, mB);
@@ -125,12 +123,12 @@ namespace ProjectPrinter
             mGraficosY.DrawLine(mPen, mC, mD);
 
         }
-        public void GraficadoraRellenoZ(PictureBox cuadradoZ, PictureBox cuadradoX, PictureBox cuadradoY, ComboBox color)
+        public void GraficadoraRellenoZ(PictureBox[] pictureBoxes, ComboBox color, ListBox[] listas)
         {
             int verificador = 0;
-            mGraficosZ = cuadradoZ.CreateGraphics();
-            mGraficosY = cuadradoY.CreateGraphics();
-            mGraficosX = cuadradoX.CreateGraphics();
+            mGraficosZ = pictureBoxes[0].CreateGraphics();
+            mGraficosX = pictureBoxes[1].CreateGraphics();
+            mGraficosY = pictureBoxes[2].CreateGraphics();
             int rango = (int)mLado * 10;
             //Z
             PointF[] PuntosT1;
@@ -147,7 +145,7 @@ namespace ProjectPrinter
             PuntosR = LinePoints.ObtenerPuntos(mB, mD, rango);
             PointF[] PuntosEntreLineas;
 
-           
+
             do
             {
                 mPen = SeleccionarColor(color);
@@ -157,16 +155,22 @@ namespace ProjectPrinter
                     //Z
                     Thread.Sleep(20);
                     mGraficosZ.DrawLine(mPen, PuntosT1[i], PuntosB1[i]);
+                    listas[0].Items.Add("X:  " + PuntosT1[i].X.ToString()); listas[1].Items.Add("Y:  " + PuntosT1[i].Y.ToString());
+                    listas[2].Items.Add("X:  " + PuntosB1[i].X.ToString()); listas[3].Items.Add("Y:  " + PuntosB1[i].Y.ToString());
                     //Y
                     Point pixel = new Point();
                     pixel.X = (int)PuntosEntreLineas[i].X;
                     pixel.Y = (int)PuntosEntreLineas[i].Y;
-                    Rectangle rect = new Rectangle(pixel, new Size(2, 2));
+                    listas[4].Items.Add("X:  " + PuntosL[i].X.ToString()); listas[5].Items.Add("Y:  " + PuntosL[i].Y.ToString());
+                    listas[6].Items.Add("X:  " + PuntosR[i].X.ToString()); listas[7].Items.Add("Y:  " + PuntosR[i].Y.ToString());
+                    listas[12].Items.Add(pixel.X + "," + pixel.Y );
+                    Rectangle rect = new Rectangle(pixel, new Size(1, 1));
                     mGraficosY.DrawRectangle(mPen, rect);
                 }
                 //X
                 mGraficosX.DrawLine(mPen, PuntosL[verificador], PuntosR[verificador]);
-                //GraficadoraRellenoX(cuadradoX, cuadradoY, color, verificador);
+                listas[8].Items.Add("X:  " + PuntosL[verificador].X.ToString()); listas[9].Items.Add("Y:  " + PuntosL[verificador].Y.ToString());
+                listas[10].Items.Add("X:  " + PuntosR[verificador].X.ToString()); listas[11].Items.Add("Y:  " + PuntosR[verificador].Y.ToString());
                 verificador++;
             } while (verificador != rango);
 
@@ -179,10 +183,10 @@ namespace ProjectPrinter
             PointF[] PuntosR;
             PointF Puntos;
 
-            PuntosL = LinePoints.ObtenerPuntos(mA,mC,rango);
-            PuntosR = LinePoints.ObtenerPuntos(mB,mD,rango);
+            PuntosL = LinePoints.ObtenerPuntos(mA, mC, rango);
+            PuntosR = LinePoints.ObtenerPuntos(mB, mD, rango);
 
-            for (int i = 0; i <=capas; i++)
+            for (int i = 0; i <= capas; i++)
             {
                 mGraficosX.DrawLine(mPen, PuntosR[i], PuntosL[i]);
             }
@@ -217,17 +221,17 @@ namespace ProjectPrinter
         {
             var random = new Random();
             int aleatorio = random.Next(1, 5);
-            
+
             if (aleatorio == 1)
-            return new Pen(Color.Blue, 3);
+                return new Pen(Color.Blue, 3);
             if (aleatorio == 2)
-            return new Pen(Color.Red, 3);
+                return new Pen(Color.Red, 3);
             if (aleatorio == 3)
-            return new Pen(Color.FromArgb(66, 230, 245), 3);
+                return new Pen(Color.FromArgb(66, 230, 245), 3);
             if (aleatorio == 4)
-            return new Pen(Color.Green, 3);
+                return new Pen(Color.Green, 3);
             if (aleatorio == 5)
-            return new Pen(Color.Brown, 3);
+                return new Pen(Color.Brown, 3);
             return new Pen(Color.Black, 3);
             /*
             if (color.SelectedItem == "Azul")
@@ -243,5 +247,4 @@ namespace ProjectPrinter
             return new Pen(Color.Black, 3);*/
         }
     }
-    
 }
