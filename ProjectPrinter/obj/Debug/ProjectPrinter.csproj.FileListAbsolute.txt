@@ -1,0 +1,30 @@
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPrinter\bin\Debug\ProjectPrinter.exe.config
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPrinter\bin\Debug\ProjectPrinter.exe
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPrinter\bin\Debug\ProjectPrinter.pdb
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPrinter\obj\Debug\ProjectPrinter.csprojAssemblyReference.cache
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPrinter\obj\Debug\ProjectPrinter.frmCuadrado.resources
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPrinter\obj\Debug\ProjectPrinter.frmMenu.resources
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPrinter\obj\Debug\ProjectPrinter.Properties.Resources.resources
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPrinter\obj\Debug\ProjectPrinter.csproj.GenerateResource.cache
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPrinter\obj\Debug\ProjectPrinter.csproj.CoreCompileInputs.cache
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPrinter\obj\Debug\ProjectPrinter.exe
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPrinter\obj\Debug\ProjectPrinter.pdb
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPrinter\bin\Debug\Utilidades.dll
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPrinter\bin\Debug\Utilidades.pdb
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPrinter\obj\Debug\ProjectPrinter.csproj.CopyComplete
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\ProjectPrinter\obj\Debug\ProjectPrinter.frmTriangulo.resources
+C:\Users\Kevin111\Documents\Tercero\Respaldo\ProjectPrinter-master\ProjectPrinter-master\ProjectPrinter\bin\Debug\ProjectPrinter.exe.config
+C:\Users\Kevin111\Documents\Tercero\Respaldo\ProjectPrinter-master\ProjectPrinter-master\ProjectPrinter\bin\Debug\ProjectPrinter.exe
+C:\Users\Kevin111\Documents\Tercero\Respaldo\ProjectPrinter-master\ProjectPrinter-master\ProjectPrinter\bin\Debug\ProjectPrinter.pdb
+C:\Users\Kevin111\Documents\Tercero\Respaldo\ProjectPrinter-master\ProjectPrinter-master\ProjectPrinter\bin\Debug\Utilidades.dll
+C:\Users\Kevin111\Documents\Tercero\Respaldo\ProjectPrinter-master\ProjectPrinter-master\ProjectPrinter\bin\Debug\Utilidades.pdb
+C:\Users\Kevin111\Documents\Tercero\Respaldo\ProjectPrinter-master\ProjectPrinter-master\ProjectPrinter\obj\Debug\ProjectPrinter.csprojAssemblyReference.cache
+C:\Users\Kevin111\Documents\Tercero\Respaldo\ProjectPrinter-master\ProjectPrinter-master\ProjectPrinter\obj\Debug\ProjectPrinter.frmCuadrado.resources
+C:\Users\Kevin111\Documents\Tercero\Respaldo\ProjectPrinter-master\ProjectPrinter-master\ProjectPrinter\obj\Debug\ProjectPrinter.frmMenu.resources
+C:\Users\Kevin111\Documents\Tercero\Respaldo\ProjectPrinter-master\ProjectPrinter-master\ProjectPrinter\obj\Debug\ProjectPrinter.frmTriangulo.resources
+C:\Users\Kevin111\Documents\Tercero\Respaldo\ProjectPrinter-master\ProjectPrinter-master\ProjectPrinter\obj\Debug\ProjectPrinter.Properties.Resources.resources
+C:\Users\Kevin111\Documents\Tercero\Respaldo\ProjectPrinter-master\ProjectPrinter-master\ProjectPrinter\obj\Debug\ProjectPrinter.csproj.GenerateResource.cache
+C:\Users\Kevin111\Documents\Tercero\Respaldo\ProjectPrinter-master\ProjectPrinter-master\ProjectPrinter\obj\Debug\ProjectPrinter.csproj.CoreCompileInputs.cache
+C:\Users\Kevin111\Documents\Tercero\Respaldo\ProjectPrinter-master\ProjectPrinter-master\ProjectPrinter\obj\Debug\ProjectPrinter.csproj.CopyComplete
+C:\Users\Kevin111\Documents\Tercero\Respaldo\ProjectPrinter-master\ProjectPrinter-master\ProjectPrinter\obj\Debug\ProjectPrinter.exe
+C:\Users\Kevin111\Documents\Tercero\Respaldo\ProjectPrinter-master\ProjectPrinter-master\ProjectPrinter\obj\Debug\ProjectPrinter.pdb

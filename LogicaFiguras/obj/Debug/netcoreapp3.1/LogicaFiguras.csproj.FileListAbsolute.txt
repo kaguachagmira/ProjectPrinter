@@ -1,0 +1,13 @@
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\LogicaFiguras\bin\Debug\netcoreapp3.1\LogicaFiguras.deps.json
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\LogicaFiguras\bin\Debug\netcoreapp3.1\LogicaFiguras.dll
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\LogicaFiguras\bin\Debug\netcoreapp3.1\LogicaFiguras.pdb
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\LogicaFiguras\bin\Debug\netcoreapp3.1\Utilidades.dll
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\LogicaFiguras\bin\Debug\netcoreapp3.1\Utilidades.pdb
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\LogicaFiguras\obj\Debug\netcoreapp3.1\LogicaFiguras.csprojAssemblyReference.cache
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\LogicaFiguras\obj\Debug\netcoreapp3.1\LogicaFiguras.csproj.ResolveComReference.cache
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\LogicaFiguras\obj\Debug\netcoreapp3.1\LogicaFiguras.AssemblyInfoInputs.cache
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\LogicaFiguras\obj\Debug\netcoreapp3.1\LogicaFiguras.AssemblyInfo.cs
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\LogicaFiguras\obj\Debug\netcoreapp3.1\LogicaFiguras.csproj.CoreCompileInputs.cache
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\LogicaFiguras\obj\Debug\netcoreapp3.1\LogicaFiguras.csproj.CopyComplete
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\LogicaFiguras\obj\Debug\netcoreapp3.1\LogicaFiguras.dll
+C:\Users\Kevin111\Documents\Tercero\Programacion Visual\ProjectPrinter\LogicaFiguras\obj\Debug\netcoreapp3.1\LogicaFiguras.pdb

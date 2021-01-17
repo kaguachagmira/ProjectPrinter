@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "WeIr6yC1UOj04ulq6hcB/nKgfkxzifc44Ga/s7fIeHqL3rLeD3Km29Y2W0BbXzzBf8BXS9e2zpXgvQXb7UAcuA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Kevin111\\Documents\\Tercero\\Respaldo\\ProjectPrinter-master\\ProjectPrinter-master\\Utilidades\\Utilidades.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Kevin111\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Kevin111\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
