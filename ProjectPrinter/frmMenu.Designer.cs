@@ -70,10 +70,16 @@ namespace ProjectPrinter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.LemonChiffon;
+            this.CausesValidation = false;
+            this.ClientSize = new System.Drawing.Size(800, 691);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmMenu";
-            this.Text = "Form1";
+            this.ShowInTaskbar = false;
+            this.Text = "Menú";
+            this.Load += new System.EventHandler(this.frmMenu_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 

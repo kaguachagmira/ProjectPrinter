@@ -65,6 +65,7 @@
       <DependentUpon>frmTriangulo.cs</DependentUpon>
     </Compile>
     <Compile Include="LogicaCuadrado.cs" />
+    <Compile Include="LogicaTriangulo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCuadrado.resx">

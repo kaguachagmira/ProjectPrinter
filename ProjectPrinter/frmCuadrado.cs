@@ -19,7 +19,6 @@ namespace ProjectPrinter
             InitializeComponent();
             objCuadrado.InicializaDatos(txtLado, txtPerimetro, txtArea, picSquareZ);
             this.btnContorno.Enabled = !string.IsNullOrWhiteSpace(this.txtLado.Text);
-            this.btnGraficar.Enabled = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -27,17 +26,9 @@ namespace ProjectPrinter
 
         }
 
-        private void btnGraficar_Click(object sender, EventArgs e)
+        private  void  btnGraficar_Click(object sender, EventArgs e)
         {
-            PictureBox[] pictureBoxes = {picSquareZ, picSquareX, picSquareY };
-            ListBox[] listaImpresion = {lstZx1, lstZy1, lstZx2, lstZy2,
-                                        lstXx1, lstXy1, lstXx2, lstXy2,
-                                        lstYx1, lstYy1, lstYx2, lstYy2,lstPunto};
 
-            objCuadrado.LeerDatos(txtLado);
-            objCuadrado.AreayPerimetro();
-            objCuadrado.Imprimir(txtPerimetro, txtArea);
-            objCuadrado.CreadoraRelleno(pictureBoxes, comboColor,listaImpresion);
         }
 
         private void picSquare_Click(object sender, EventArgs e)
@@ -73,11 +64,14 @@ namespace ProjectPrinter
         private void button1_Click(object sender, EventArgs e)
         {
             PictureBox[] pictureBoxes = { picSquareZ, picSquareX, picSquareY };
-            btnGraficar.Enabled = true;
+            ListBox[] listaImpresion = {lstZx1, lstZy1, lstZx2, lstZy2,
+                                        lstXx1, lstXy1, lstXx2, lstXy2,
+                                        lstYx1, lstYy1, lstYx2, lstYy2,lstPunto};
             objCuadrado.LeerDatos(txtLado);
             objCuadrado.AreayPerimetro();
             objCuadrado.Imprimir(txtPerimetro, txtArea);
             objCuadrado.CreadoraContorno(pictureBoxes, comboColor);
+            objCuadrado.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion);
         }
 
         private void frmCuadrado_Load(object sender, EventArgs e)
@@ -113,6 +107,26 @@ namespace ProjectPrinter
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            PictureBox[] pictureBoxes = { picSquareZ, picSquareX, picSquareY };
+            ListBox[] listaImpresion = {lstZx1, lstZy1, lstZx2, lstZy2,
+                                        lstXx1, lstXy1, lstXx2, lstXy2,
+                                        lstYx1, lstYy1, lstYx2, lstYy2,lstPunto};
+            this.txtLado.Clear();
+
+            for(int i = 0; i < pictureBoxes.Length; i++)
+            {
+                pictureBoxes[i].Refresh();
+            }
+            for (int j = 0; j < listaImpresion.Length; j++)
+            {
+                listaImpresion[j].Items.Clear();
+            }
+            this.txtArea.Clear();
+            this.txtPerimetro.Clear();
         }
     }
 }

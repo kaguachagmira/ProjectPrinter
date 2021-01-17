@@ -33,5 +33,10 @@ namespace ProjectPrinter
             frmTriangulo cuadradoTrinagulo = new frmTriangulo();
             cuadradoTrinagulo.Show();
         }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

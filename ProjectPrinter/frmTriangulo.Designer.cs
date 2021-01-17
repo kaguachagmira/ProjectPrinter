@@ -75,7 +75,7 @@ namespace ProjectPrinter
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPerimetro = new System.Windows.Forms.TextBox();
-            this.txtArea = new System.Windows.Forms.TextBox();
+            this.txtAltura = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -87,6 +87,13 @@ namespace ProjectPrinter
             this.lstZy2 = new System.Windows.Forms.ListBox();
             this.label8 = new System.Windows.Forms.Label();
             this.lstZx2 = new System.Windows.Forms.ListBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtArea = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.lblAltura = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSquareY)).BeginInit();
@@ -177,6 +184,7 @@ namespace ProjectPrinter
             this.btnGraficar.TabIndex = 2;
             this.btnGraficar.Text = "Imprimir relleno";
             this.btnGraficar.UseVisualStyleBackColor = true;
+            this.btnGraficar.Click += new System.EventHandler(this.btnGraficar_Click);
             // 
             // txtLado
             // 
@@ -492,11 +500,18 @@ namespace ProjectPrinter
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.lblAltura);
+            this.groupBox4.Controls.Add(this.label17);
+            this.groupBox4.Controls.Add(this.txtArea);
+            this.groupBox4.Controls.Add(this.textBox4);
+            this.groupBox4.Controls.Add(this.textBox3);
+            this.groupBox4.Controls.Add(this.textBox2);
+            this.groupBox4.Controls.Add(this.textBox1);
             this.groupBox4.Controls.Add(this.groupBox2);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.txtPerimetro);
-            this.groupBox4.Controls.Add(this.txtArea);
+            this.groupBox4.Controls.Add(this.txtAltura);
             this.groupBox4.Location = new System.Drawing.Point(12, 235);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(326, 465);
@@ -526,7 +541,7 @@ namespace ProjectPrinter
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(220, 21);
+            this.label4.Location = new System.Drawing.Point(238, 21);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(51, 13);
@@ -536,7 +551,7 @@ namespace ProjectPrinter
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(59, 16);
+            this.label3.Location = new System.Drawing.Point(146, 16);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label3.Size = new System.Drawing.Size(29, 13);
@@ -545,17 +560,17 @@ namespace ProjectPrinter
             // 
             // txtPerimetro
             // 
-            this.txtPerimetro.Location = new System.Drawing.Point(192, 37);
+            this.txtPerimetro.Location = new System.Drawing.Point(235, 37);
             this.txtPerimetro.Name = "txtPerimetro";
-            this.txtPerimetro.Size = new System.Drawing.Size(100, 20);
+            this.txtPerimetro.Size = new System.Drawing.Size(57, 20);
             this.txtPerimetro.TabIndex = 3;
             // 
-            // txtArea
+            // txtAltura
             // 
-            this.txtArea.Location = new System.Drawing.Point(21, 37);
-            this.txtArea.Name = "txtArea";
-            this.txtArea.Size = new System.Drawing.Size(112, 20);
-            this.txtArea.TabIndex = 2;
+            this.txtAltura.Location = new System.Drawing.Point(50, 39);
+            this.txtAltura.Name = "txtAltura";
+            this.txtAltura.Size = new System.Drawing.Size(56, 20);
+            this.txtAltura.TabIndex = 2;
             // 
             // groupBox6
             // 
@@ -662,11 +677,67 @@ namespace ProjectPrinter
             this.lstZx2.Size = new System.Drawing.Size(80, 134);
             this.lstZx2.TabIndex = 2;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(135, 222);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(56, 20);
+            this.textBox1.TabIndex = 14;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(143, 230);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(56, 20);
+            this.textBox2.TabIndex = 15;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(151, 238);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(56, 20);
+            this.textBox3.TabIndex = 16;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(159, 246);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(56, 20);
+            this.textBox4.TabIndex = 17;
+            // 
+            // txtArea
+            // 
+            this.txtArea.Location = new System.Drawing.Point(132, 37);
+            this.txtArea.Name = "txtArea";
+            this.txtArea.Size = new System.Drawing.Size(56, 20);
+            this.txtArea.TabIndex = 11;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(149, 226);
+            this.label17.Name = "label17";
+            this.label17.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label17.Size = new System.Drawing.Size(29, 13);
+            this.label17.TabIndex = 18;
+            this.label17.Text = "Area";
+            // 
+            // lblAltura
+            // 
+            this.lblAltura.AutoSize = true;
+            this.lblAltura.Location = new System.Drawing.Point(60, 16);
+            this.lblAltura.Name = "lblAltura";
+            this.lblAltura.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblAltura.Size = new System.Drawing.Size(34, 13);
+            this.lblAltura.TabIndex = 12;
+            this.lblAltura.Text = "Altura";
+            this.lblAltura.Click += new System.EventHandler(this.label19_Click);
+            // 
             // frmTriangulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1129, 711);
+            this.ClientSize = new System.Drawing.Size(1129, 691);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
@@ -675,8 +746,11 @@ namespace ProjectPrinter
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.Grafico);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmTriangulo";
-            this.Text = "frmTriangulo";
+            this.Text = "Triángulo";
+            this.Load += new System.EventHandler(this.frmTriangulo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -757,7 +831,7 @@ namespace ProjectPrinter
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPerimetro;
-        private System.Windows.Forms.TextBox txtArea;
+        private System.Windows.Forms.TextBox txtAltura;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Label label6;
@@ -769,5 +843,12 @@ namespace ProjectPrinter
         private System.Windows.Forms.ListBox lstZy2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ListBox lstZx2;
+        private System.Windows.Forms.Label lblAltura;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtArea;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
