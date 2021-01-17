@@ -19,6 +19,10 @@ namespace ProjectPrinter
             InitializeComponent();
             objCuadrado.InicializaDatos(txtLado, txtPerimetro, txtArea, picSquareZ);
             this.btnContorno.Enabled = !string.IsNullOrWhiteSpace(this.txtLado.Text);
+<<<<<<< HEAD
+=======
+            this.btnGraficar.Enabled = false;
+>>>>>>> 3c2d9fc1d3ebe361541312c344b55c8c7f760fd3
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -53,6 +57,42 @@ namespace ProjectPrinter
 
         private void label3_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+=======
+            PictureBox[] pictureBoxes = {picSquareZ, picSquareX, picSquareY };
+            ListBox[] listaImpresion = {lstZx1, lstZy1, lstZx2, lstZy2,
+                                        lstXx1, lstXy1, lstXx2, lstXy2,
+                                        lstYx1, lstYy1, lstYx2, lstYy2,lstPunto};
+
+            objCuadrado.LeerDatos(txtLado);
+            objCuadrado.AreayPerimetro();
+            objCuadrado.Imprimir(txtPerimetro, txtArea);
+            objCuadrado.CreadoraRelleno(pictureBoxes, comboColor,listaImpresion);
+        }
+
+        private void picSquare_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+>>>>>>> 3c2d9fc1d3ebe361541312c344b55c8c7f760fd3
 
         }
 
@@ -64,14 +104,21 @@ namespace ProjectPrinter
         private void button1_Click(object sender, EventArgs e)
         {
             PictureBox[] pictureBoxes = { picSquareZ, picSquareX, picSquareY };
+<<<<<<< HEAD
             ListBox[] listaImpresion = {lstZx1, lstZy1, lstZx2, lstZy2,
                                         lstXx1, lstXy1, lstXx2, lstXy2,
                                         lstYx1, lstYy1, lstYx2, lstYy2,lstPunto};
+=======
+            btnGraficar.Enabled = true;
+>>>>>>> 3c2d9fc1d3ebe361541312c344b55c8c7f760fd3
             objCuadrado.LeerDatos(txtLado);
             objCuadrado.AreayPerimetro();
             objCuadrado.Imprimir(txtPerimetro, txtArea);
             objCuadrado.CreadoraContorno(pictureBoxes, comboColor);
+<<<<<<< HEAD
             objCuadrado.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion);
+=======
+>>>>>>> 3c2d9fc1d3ebe361541312c344b55c8c7f760fd3
         }
 
         private void frmCuadrado_Load(object sender, EventArgs e)
@@ -106,6 +153,7 @@ namespace ProjectPrinter
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
+<<<<<<< HEAD
 
         }
 
@@ -116,6 +164,8 @@ namespace ProjectPrinter
                                         lstXx1, lstXy1, lstXx2, lstXy2,
                                         lstYx1, lstYy1, lstYx2, lstYy2,lstPunto};
             this.txtLado.Clear();
+=======
+>>>>>>> 3c2d9fc1d3ebe361541312c344b55c8c7f760fd3
 
             for(int i = 0; i < pictureBoxes.Length; i++)
             {

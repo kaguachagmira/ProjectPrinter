@@ -12,18 +12,25 @@ namespace ProjectPrinter
 {
     public partial class frmTriangulo : Form
     {
+<<<<<<< HEAD
         LogicaTriangulo objTriangulo = new LogicaTriangulo();
         public frmTriangulo()
         {
             InitializeComponent();
             objTriangulo.InicializaDatos(txtLado, txtPerimetro, txtAltura, txtAltura, picSquareZ);
             this.btnContorno.Enabled = !string.IsNullOrWhiteSpace(this.txtLado.Text);
+=======
+        public frmTriangulo()
+        {
+            InitializeComponent();
+>>>>>>> 3c2d9fc1d3ebe361541312c344b55c8c7f760fd3
         }
 
         private void btnContorno_Click(object sender, EventArgs e)
         {
 
         }
+<<<<<<< HEAD
 
         private void frmTriangulo_Load(object sender, EventArgs e)
         {
@@ -48,5 +55,7 @@ namespace ProjectPrinter
             objTriangulo.GraficadoraRellenoZ(pictureBoxes, comboColor, listaImpresion);
             //objTriangulo.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion);
         }
+=======
+>>>>>>> 3c2d9fc1d3ebe361541312c344b55c8c7f760fd3
     }
 }
