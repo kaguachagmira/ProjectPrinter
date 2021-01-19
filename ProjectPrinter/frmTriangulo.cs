@@ -53,5 +53,20 @@ namespace ProjectPrinter
             objTriangulo.GraficadoraRellenoZ(pictureBoxes, comboColor, listaImpresion);
             //objTriangulo.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion);
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstXy2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstXy1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

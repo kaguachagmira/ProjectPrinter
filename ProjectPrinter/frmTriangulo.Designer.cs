@@ -70,6 +70,8 @@ namespace ProjectPrinter
             this.lstYy2 = new System.Windows.Forms.ListBox();
             this.lstYx2 = new System.Windows.Forms.ListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtAltura = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -87,8 +89,6 @@ namespace ProjectPrinter
             this.lstZy2 = new System.Windows.Forms.ListBox();
             this.label8 = new System.Windows.Forms.Label();
             this.lstZx2 = new System.Windows.Forms.ListBox();
-            this.txtAltura = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSquareY)).BeginInit();
@@ -120,9 +120,9 @@ namespace ProjectPrinter
             this.groupBox1.Controls.Add(this.btnGraficar);
             this.groupBox1.Controls.Add(this.txtLado);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, -1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(325, 217);
+            this.groupBox1.Size = new System.Drawing.Size(252, 191);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Setup";
@@ -147,9 +147,9 @@ namespace ProjectPrinter
             "Amarillo",
             "Verde",
             "Café"});
-            this.comboColor.Location = new System.Drawing.Point(191, 51);
+            this.comboColor.Location = new System.Drawing.Point(168, 51);
             this.comboColor.Name = "comboColor";
-            this.comboColor.Size = new System.Drawing.Size(100, 21);
+            this.comboColor.Size = new System.Drawing.Size(62, 21);
             this.comboColor.TabIndex = 9;
             // 
             // btnContorno
@@ -183,9 +183,9 @@ namespace ProjectPrinter
             // 
             // txtLado
             // 
-            this.txtLado.Location = new System.Drawing.Point(191, 20);
+            this.txtLado.Location = new System.Drawing.Point(168, 20);
             this.txtLado.Name = "txtLado";
-            this.txtLado.Size = new System.Drawing.Size(100, 20);
+            this.txtLado.Size = new System.Drawing.Size(62, 20);
             this.txtLado.TabIndex = 1;
             // 
             // label1
@@ -200,9 +200,9 @@ namespace ProjectPrinter
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.picSquareY);
-            this.groupBox3.Location = new System.Drawing.Point(820, 234);
+            this.groupBox3.Location = new System.Drawing.Point(581, 190);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(297, 216);
+            this.groupBox3.Size = new System.Drawing.Size(253, 188);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Perspectiva X";
@@ -212,16 +212,16 @@ namespace ProjectPrinter
             this.picSquareY.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.picSquareY.Location = new System.Drawing.Point(22, 20);
             this.picSquareY.Name = "picSquareY";
-            this.picSquareY.Size = new System.Drawing.Size(253, 172);
+            this.picSquareY.Size = new System.Drawing.Size(209, 150);
             this.picSquareY.TabIndex = 0;
             this.picSquareY.TabStop = false;
             // 
             // Grafico
             // 
             this.Grafico.Controls.Add(this.picSquareZ);
-            this.Grafico.Location = new System.Drawing.Point(820, 12);
+            this.Grafico.Location = new System.Drawing.Point(579, 2);
             this.Grafico.Name = "Grafico";
-            this.Grafico.Size = new System.Drawing.Size(297, 216);
+            this.Grafico.Size = new System.Drawing.Size(254, 188);
             this.Grafico.TabIndex = 4;
             this.Grafico.TabStop = false;
             this.Grafico.Text = "Perspectiva Z";
@@ -231,16 +231,16 @@ namespace ProjectPrinter
             this.picSquareZ.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.picSquareZ.Location = new System.Drawing.Point(22, 25);
             this.picSquareZ.Name = "picSquareZ";
-            this.picSquareZ.Size = new System.Drawing.Size(253, 172);
+            this.picSquareZ.Size = new System.Drawing.Size(212, 150);
             this.picSquareZ.TabIndex = 0;
             this.picSquareZ.TabStop = false;
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.picSquareX);
-            this.groupBox5.Location = new System.Drawing.Point(820, 469);
+            this.groupBox5.Location = new System.Drawing.Point(581, 377);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(297, 216);
+            this.groupBox5.Size = new System.Drawing.Size(253, 184);
             this.groupBox5.TabIndex = 6;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Perspectiva Y";
@@ -248,9 +248,9 @@ namespace ProjectPrinter
             // picSquareX
             // 
             this.picSquareX.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.picSquareX.Location = new System.Drawing.Point(22, 28);
+            this.picSquareX.Location = new System.Drawing.Point(22, 23);
             this.picSquareX.Name = "picSquareX";
-            this.picSquareX.Size = new System.Drawing.Size(253, 172);
+            this.picSquareX.Size = new System.Drawing.Size(209, 150);
             this.picSquareX.TabIndex = 0;
             this.picSquareX.TabStop = false;
             // 
@@ -259,9 +259,9 @@ namespace ProjectPrinter
             this.groupBox8.Controls.Add(this.groupBox15);
             this.groupBox8.Controls.Add(this.groupBox13);
             this.groupBox8.Controls.Add(this.groupBox14);
-            this.groupBox8.Location = new System.Drawing.Point(376, 234);
+            this.groupBox8.Location = new System.Drawing.Point(271, 190);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(419, 216);
+            this.groupBox8.Size = new System.Drawing.Size(304, 188);
             this.groupBox8.TabIndex = 11;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Data  X";
@@ -270,9 +270,9 @@ namespace ProjectPrinter
             // 
             this.groupBox15.Controls.Add(this.label18);
             this.groupBox15.Controls.Add(this.lstPunto);
-            this.groupBox15.Location = new System.Drawing.Point(330, 25);
+            this.groupBox15.Location = new System.Drawing.Point(227, 25);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(77, 172);
+            this.groupBox15.Size = new System.Drawing.Size(71, 145);
             this.groupBox15.TabIndex = 8;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Pixel";
@@ -291,7 +291,7 @@ namespace ProjectPrinter
             this.lstPunto.FormattingEnabled = true;
             this.lstPunto.Location = new System.Drawing.Point(9, 32);
             this.lstPunto.Name = "lstPunto";
-            this.lstPunto.Size = new System.Drawing.Size(50, 134);
+            this.lstPunto.Size = new System.Drawing.Size(50, 95);
             this.lstPunto.TabIndex = 2;
             // 
             // groupBox13
@@ -302,7 +302,7 @@ namespace ProjectPrinter
             this.groupBox13.Controls.Add(this.lstXy1);
             this.groupBox13.Location = new System.Drawing.Point(14, 25);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(150, 172);
+            this.groupBox13.Size = new System.Drawing.Size(103, 145);
             this.groupBox13.TabIndex = 6;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Izquierda";
@@ -310,7 +310,7 @@ namespace ProjectPrinter
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(99, 16);
+            this.label13.Location = new System.Drawing.Point(70, 16);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(14, 13);
             this.label13.TabIndex = 5;
@@ -319,7 +319,7 @@ namespace ProjectPrinter
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(33, 16);
+            this.label14.Location = new System.Drawing.Point(24, 16);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(14, 13);
             this.label14.TabIndex = 4;
@@ -330,16 +330,17 @@ namespace ProjectPrinter
             this.lstXx1.FormattingEnabled = true;
             this.lstXx1.Location = new System.Drawing.Point(15, 32);
             this.lstXx1.Name = "lstXx1";
-            this.lstXx1.Size = new System.Drawing.Size(50, 134);
+            this.lstXx1.Size = new System.Drawing.Size(30, 95);
             this.lstXx1.TabIndex = 0;
             // 
             // lstXy1
             // 
             this.lstXy1.FormattingEnabled = true;
-            this.lstXy1.Location = new System.Drawing.Point(83, 32);
+            this.lstXy1.Location = new System.Drawing.Point(63, 33);
             this.lstXy1.Name = "lstXy1";
-            this.lstXy1.Size = new System.Drawing.Size(50, 134);
+            this.lstXy1.Size = new System.Drawing.Size(30, 95);
             this.lstXy1.TabIndex = 1;
+            this.lstXy1.SelectedIndexChanged += new System.EventHandler(this.lstXy1_SelectedIndexChanged);
             // 
             // groupBox14
             // 
@@ -347,9 +348,9 @@ namespace ProjectPrinter
             this.groupBox14.Controls.Add(this.label16);
             this.groupBox14.Controls.Add(this.lstXy2);
             this.groupBox14.Controls.Add(this.lstXx2);
-            this.groupBox14.Location = new System.Drawing.Point(174, 25);
+            this.groupBox14.Location = new System.Drawing.Point(123, 25);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(150, 172);
+            this.groupBox14.Size = new System.Drawing.Size(95, 145);
             this.groupBox14.TabIndex = 7;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Derecha";
@@ -357,7 +358,7 @@ namespace ProjectPrinter
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(95, 16);
+            this.label15.Location = new System.Drawing.Point(62, 16);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(14, 13);
             this.label15.TabIndex = 5;
@@ -366,7 +367,7 @@ namespace ProjectPrinter
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(27, 16);
+            this.label16.Location = new System.Drawing.Point(18, 16);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(14, 13);
             this.label16.TabIndex = 4;
@@ -375,26 +376,27 @@ namespace ProjectPrinter
             // lstXy2
             // 
             this.lstXy2.FormattingEnabled = true;
-            this.lstXy2.Location = new System.Drawing.Point(80, 32);
+            this.lstXy2.Location = new System.Drawing.Point(52, 33);
             this.lstXy2.Name = "lstXy2";
-            this.lstXy2.Size = new System.Drawing.Size(50, 134);
+            this.lstXy2.Size = new System.Drawing.Size(30, 95);
             this.lstXy2.TabIndex = 3;
+            this.lstXy2.SelectedIndexChanged += new System.EventHandler(this.lstXy2_SelectedIndexChanged);
             // 
             // lstXx2
             // 
             this.lstXx2.FormattingEnabled = true;
             this.lstXx2.Location = new System.Drawing.Point(9, 32);
             this.lstXx2.Name = "lstXx2";
-            this.lstXx2.Size = new System.Drawing.Size(50, 134);
+            this.lstXx2.Size = new System.Drawing.Size(30, 95);
             this.lstXx2.TabIndex = 2;
             // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.groupBox11);
             this.groupBox7.Controls.Add(this.groupBox12);
-            this.groupBox7.Location = new System.Drawing.Point(376, 469);
+            this.groupBox7.Location = new System.Drawing.Point(271, 378);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(419, 216);
+            this.groupBox7.Size = new System.Drawing.Size(304, 184);
             this.groupBox7.TabIndex = 10;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Data  Y";
@@ -407,7 +409,7 @@ namespace ProjectPrinter
             this.groupBox11.Controls.Add(this.lstYy1);
             this.groupBox11.Location = new System.Drawing.Point(14, 25);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(188, 172);
+            this.groupBox11.Size = new System.Drawing.Size(122, 144);
             this.groupBox11.TabIndex = 6;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Top";
@@ -415,7 +417,7 @@ namespace ProjectPrinter
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(134, 16);
+            this.label9.Location = new System.Drawing.Point(77, 16);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(14, 13);
             this.label9.TabIndex = 7;
@@ -426,13 +428,13 @@ namespace ProjectPrinter
             this.lstYx1.FormattingEnabled = true;
             this.lstYx1.Location = new System.Drawing.Point(11, 32);
             this.lstYx1.Name = "lstYx1";
-            this.lstYx1.Size = new System.Drawing.Size(80, 134);
+            this.lstYx1.Size = new System.Drawing.Size(40, 95);
             this.lstYx1.TabIndex = 0;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(45, 16);
+            this.label10.Location = new System.Drawing.Point(25, 16);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(14, 13);
             this.label10.TabIndex = 6;
@@ -441,9 +443,9 @@ namespace ProjectPrinter
             // lstYy1
             // 
             this.lstYy1.FormattingEnabled = true;
-            this.lstYy1.Location = new System.Drawing.Point(99, 32);
+            this.lstYy1.Location = new System.Drawing.Point(63, 32);
             this.lstYy1.Name = "lstYy1";
-            this.lstYy1.Size = new System.Drawing.Size(80, 134);
+            this.lstYy1.Size = new System.Drawing.Size(40, 95);
             this.lstYy1.TabIndex = 1;
             // 
             // groupBox12
@@ -452,9 +454,9 @@ namespace ProjectPrinter
             this.groupBox12.Controls.Add(this.label12);
             this.groupBox12.Controls.Add(this.lstYy2);
             this.groupBox12.Controls.Add(this.lstYx2);
-            this.groupBox12.Location = new System.Drawing.Point(225, 25);
+            this.groupBox12.Location = new System.Drawing.Point(151, 25);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(188, 172);
+            this.groupBox12.Size = new System.Drawing.Size(130, 141);
             this.groupBox12.TabIndex = 7;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Bot";
@@ -462,7 +464,7 @@ namespace ProjectPrinter
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(131, 16);
+            this.label11.Location = new System.Drawing.Point(78, 16);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(14, 13);
             this.label11.TabIndex = 5;
@@ -471,7 +473,7 @@ namespace ProjectPrinter
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(42, 16);
+            this.label12.Location = new System.Drawing.Point(22, 16);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(14, 13);
             this.label12.TabIndex = 4;
@@ -480,9 +482,9 @@ namespace ProjectPrinter
             // lstYy2
             // 
             this.lstYy2.FormattingEnabled = true;
-            this.lstYy2.Location = new System.Drawing.Point(102, 32);
+            this.lstYy2.Location = new System.Drawing.Point(65, 32);
             this.lstYy2.Name = "lstYy2";
-            this.lstYy2.Size = new System.Drawing.Size(80, 134);
+            this.lstYy2.Size = new System.Drawing.Size(40, 95);
             this.lstYy2.TabIndex = 3;
             // 
             // lstYx2
@@ -490,7 +492,7 @@ namespace ProjectPrinter
             this.lstYx2.FormattingEnabled = true;
             this.lstYx2.Location = new System.Drawing.Point(9, 32);
             this.lstYx2.Name = "lstYx2";
-            this.lstYx2.Size = new System.Drawing.Size(80, 134);
+            this.lstYx2.Size = new System.Drawing.Size(40, 95);
             this.lstYx2.TabIndex = 2;
             // 
             // groupBox4
@@ -502,19 +504,36 @@ namespace ProjectPrinter
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.txtPerimetro);
             this.groupBox4.Controls.Add(this.txtArea);
-            this.groupBox4.Location = new System.Drawing.Point(12, 235);
+            this.groupBox4.Location = new System.Drawing.Point(12, 190);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(326, 465);
+            this.groupBox4.Size = new System.Drawing.Size(252, 367);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Data";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(30, 21);
+            this.label17.Name = "label17";
+            this.label17.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label17.Size = new System.Drawing.Size(34, 13);
+            this.label17.TabIndex = 12;
+            this.label17.Text = "Altura";
+            // 
+            // txtAltura
+            // 
+            this.txtAltura.Location = new System.Drawing.Point(25, 44);
+            this.txtAltura.Name = "txtAltura";
+            this.txtAltura.Size = new System.Drawing.Size(47, 20);
+            this.txtAltura.TabIndex = 11;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Location = new System.Drawing.Point(21, 70);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(271, 378);
+            this.groupBox2.Size = new System.Drawing.Size(209, 282);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
@@ -522,16 +541,17 @@ namespace ProjectPrinter
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(18, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(9, 32);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(247, 290);
+            this.pictureBox1.Size = new System.Drawing.Size(182, 159);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(220, 21);
+            this.label4.Location = new System.Drawing.Point(182, 21);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(51, 13);
@@ -542,7 +562,7 @@ namespace ProjectPrinter
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(151, 21);
+            this.label3.Location = new System.Drawing.Point(113, 21);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label3.Size = new System.Drawing.Size(29, 13);
@@ -551,7 +571,7 @@ namespace ProjectPrinter
             // 
             // txtPerimetro
             // 
-            this.txtPerimetro.Location = new System.Drawing.Point(220, 44);
+            this.txtPerimetro.Location = new System.Drawing.Point(182, 44);
             this.txtPerimetro.Name = "txtPerimetro";
             this.txtPerimetro.Size = new System.Drawing.Size(47, 20);
             this.txtPerimetro.TabIndex = 3;
@@ -559,7 +579,7 @@ namespace ProjectPrinter
             // 
             // txtArea
             // 
-            this.txtArea.Location = new System.Drawing.Point(142, 44);
+            this.txtArea.Location = new System.Drawing.Point(104, 44);
             this.txtArea.Name = "txtArea";
             this.txtArea.Size = new System.Drawing.Size(47, 20);
             this.txtArea.TabIndex = 2;
@@ -568,9 +588,9 @@ namespace ProjectPrinter
             // 
             this.groupBox6.Controls.Add(this.groupBox9);
             this.groupBox6.Controls.Add(this.groupBox10);
-            this.groupBox6.Location = new System.Drawing.Point(376, 12);
+            this.groupBox6.Location = new System.Drawing.Point(271, 2);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(419, 216);
+            this.groupBox6.Size = new System.Drawing.Size(304, 188);
             this.groupBox6.TabIndex = 12;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Data  Z";
@@ -583,7 +603,7 @@ namespace ProjectPrinter
             this.groupBox9.Controls.Add(this.lstZy1);
             this.groupBox9.Location = new System.Drawing.Point(14, 25);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(188, 172);
+            this.groupBox9.Size = new System.Drawing.Size(122, 149);
             this.groupBox9.TabIndex = 6;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "TOP";
@@ -591,7 +611,7 @@ namespace ProjectPrinter
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(134, 13);
+            this.label6.Location = new System.Drawing.Point(76, 13);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(14, 13);
             this.label6.TabIndex = 3;
@@ -600,7 +620,7 @@ namespace ProjectPrinter
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(45, 13);
+            this.label5.Location = new System.Drawing.Point(24, 13);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(14, 13);
             this.label5.TabIndex = 2;
@@ -611,15 +631,15 @@ namespace ProjectPrinter
             this.lstZx1.FormattingEnabled = true;
             this.lstZx1.Location = new System.Drawing.Point(11, 32);
             this.lstZx1.Name = "lstZx1";
-            this.lstZx1.Size = new System.Drawing.Size(80, 134);
+            this.lstZx1.Size = new System.Drawing.Size(40, 95);
             this.lstZx1.TabIndex = 0;
             // 
             // lstZy1
             // 
             this.lstZy1.FormattingEnabled = true;
-            this.lstZy1.Location = new System.Drawing.Point(99, 32);
+            this.lstZy1.Location = new System.Drawing.Point(63, 32);
             this.lstZy1.Name = "lstZy1";
-            this.lstZy1.Size = new System.Drawing.Size(80, 134);
+            this.lstZy1.Size = new System.Drawing.Size(40, 95);
             this.lstZy1.TabIndex = 1;
             // 
             // groupBox10
@@ -628,9 +648,9 @@ namespace ProjectPrinter
             this.groupBox10.Controls.Add(this.lstZy2);
             this.groupBox10.Controls.Add(this.label8);
             this.groupBox10.Controls.Add(this.lstZx2);
-            this.groupBox10.Location = new System.Drawing.Point(225, 25);
+            this.groupBox10.Location = new System.Drawing.Point(151, 25);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(188, 172);
+            this.groupBox10.Size = new System.Drawing.Size(130, 149);
             this.groupBox10.TabIndex = 7;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "BOT";
@@ -638,7 +658,7 @@ namespace ProjectPrinter
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(131, 13);
+            this.label7.Location = new System.Drawing.Point(81, 13);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(14, 13);
             this.label7.TabIndex = 5;
@@ -647,15 +667,15 @@ namespace ProjectPrinter
             // lstZy2
             // 
             this.lstZy2.FormattingEnabled = true;
-            this.lstZy2.Location = new System.Drawing.Point(102, 32);
+            this.lstZy2.Location = new System.Drawing.Point(65, 32);
             this.lstZy2.Name = "lstZy2";
-            this.lstZy2.Size = new System.Drawing.Size(80, 134);
+            this.lstZy2.Size = new System.Drawing.Size(40, 95);
             this.lstZy2.TabIndex = 3;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(42, 13);
+            this.label8.Location = new System.Drawing.Point(19, 13);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(14, 13);
             this.label8.TabIndex = 4;
@@ -666,31 +686,14 @@ namespace ProjectPrinter
             this.lstZx2.FormattingEnabled = true;
             this.lstZx2.Location = new System.Drawing.Point(9, 32);
             this.lstZx2.Name = "lstZx2";
-            this.lstZx2.Size = new System.Drawing.Size(80, 134);
+            this.lstZx2.Size = new System.Drawing.Size(40, 95);
             this.lstZx2.TabIndex = 2;
-            // 
-            // txtAltura
-            // 
-            this.txtAltura.Location = new System.Drawing.Point(63, 44);
-            this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Size = new System.Drawing.Size(47, 20);
-            this.txtAltura.TabIndex = 11;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(68, 21);
-            this.label17.Name = "label17";
-            this.label17.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label17.Size = new System.Drawing.Size(34, 13);
-            this.label17.TabIndex = 12;
-            this.label17.Text = "Altura";
             // 
             // frmTriangulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1129, 711);
+            this.ClientSize = new System.Drawing.Size(840, 569);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
