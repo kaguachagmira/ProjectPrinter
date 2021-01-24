@@ -46,36 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmCuadrado.cs">
+    <Compile Include="frmImpresion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCuadrado.Designer.cs">
-      <DependentUpon>frmCuadrado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMenu.Designer.cs">
-      <DependentUpon>frmMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmTriangulo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTriangulo.Designer.cs">
-      <DependentUpon>frmTriangulo.cs</DependentUpon>
+    <Compile Include="frmImpresion.Designer.cs">
+      <DependentUpon>frmImpresion.cs</DependentUpon>
     </Compile>
     <Compile Include="LogicaCuadrado.cs" />
+    <Compile Include="LogicaDecagono.cs" />
+    <Compile Include="LogicaEneagono.cs" />
+    <Compile Include="LogicaHeptagono.cs" />
+    <Compile Include="LogicaHexagono.cs" />
+    <Compile Include="LogicaOctagono.cs" />
+    <Compile Include="LogicaPentagono.cs" />
     <Compile Include="LogicaTriangulo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmCuadrado.resx">
-      <DependentUpon>frmCuadrado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMenu.resx">
-      <DependentUpon>frmMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTriangulo.resx">
-      <DependentUpon>frmTriangulo.cs</DependentUpon>
+    <EmbeddedResource Include="frmImpresion.resx">
+      <DependentUpon>frmImpresion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

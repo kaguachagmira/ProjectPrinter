@@ -46,12 +46,14 @@ namespace ProjectPrinter
             mPerimetro = 0.0f;
             mArea = 0.0f;
         }
-        public void InicializaDatos(TextBox lado, TextBox perimetro, TextBox area, PictureBox cuadrado)
+        public void InicializaDatos(TextBox lado, TextBox perimetro, TextBox area, PictureBox picX, PictureBox picY, PictureBox picZ )
         {
             lado.Text = "";
             perimetro.Text = "";
             area.Text = "";
-            cuadrado.Refresh();
+            picX.Refresh();
+            picY.Refresh();
+            picZ.Refresh();
             mLado = 0.0f;
             mPerimetro = 0.0f;
             mArea = 0.0f;
@@ -117,62 +119,58 @@ namespace ProjectPrinter
             mGraficosZ.DrawLine(mPen, mA, mC);
             mGraficosZ.DrawLine(mPen, mB, mD);
             mGraficosZ.DrawLine(mPen, mD, mC);
-            //CONTORNO PERSPECTIVA X
-            mGraficosX.DrawLine(mPen, mA, mB);
-            //CONTORNO PERSPECTIVA Y
-            mGraficosY.DrawLine(mPen, mC, mD);
 
         }
         public void GraficadoraRellenoZ(PictureBox[] pictureBoxes, ComboBox color, ListBox[] listas)
         {
-            int verificador = 0;
+            int verificador = ((int)mLado * 10)-2;
             mGraficosZ = pictureBoxes[0].CreateGraphics();
             mGraficosX = pictureBoxes[1].CreateGraphics();
             mGraficosY = pictureBoxes[2].CreateGraphics();
             int rango = (int)mLado * 10;
             //Z
-            PointF[] PuntosT1;
-            PointF[] PuntosB1;
+            PointF[] puntosT1;
+            PointF[] puntosB1;
 
-            PuntosT1 = LinePoints.ObtenerPuntos(mA, mB, rango);
-            PuntosB1 = LinePoints.ObtenerPuntos(mC, mD, rango);
+            puntosT1 = LinePoints.ObtenerPuntos(mA, mB, rango);
+            puntosB1 = LinePoints.ObtenerPuntos(mC, mD, rango);
 
 
             //Y
-            PointF[] PuntosL;
-            PointF[] PuntosR;
-            PuntosL = LinePoints.ObtenerPuntos(mA, mC, rango);
-            PuntosR = LinePoints.ObtenerPuntos(mB, mD, rango);
-            PointF[] PuntosEntreLineas;
+            PointF[] puntosL;
+            PointF[] puntosR;
+            puntosL = LinePoints.ObtenerPuntos(mA, mC, rango);
+            puntosR = LinePoints.ObtenerPuntos(mB, mD, rango);
+            PointF[] puntosEntreLineas;
 
 
             do
             {
                 mPen = SeleccionarColor(color);
-                PuntosEntreLineas = LinePoints.ObtenerPuntos(PuntosL[verificador], PuntosR[verificador], rango);
-                for (int i = 0; i < rango; i++)
+                puntosEntreLineas = LinePoints.ObtenerPuntos(puntosL[verificador], puntosR[verificador], rango);
+                for (int i = puntosL.Length-2; i > 0; i--)
                 {
                     //Z
                     Thread.Sleep(20);
-                    mGraficosZ.DrawLine(mPen, PuntosT1[i], PuntosB1[i]);
-                    listas[0].Items.Add("X:  " + PuntosT1[i].X.ToString()); listas[1].Items.Add("Y:  " + PuntosT1[i].Y.ToString());
-                    listas[2].Items.Add("X:  " + PuntosB1[i].X.ToString()); listas[3].Items.Add("Y:  " + PuntosB1[i].Y.ToString());
+                    mGraficosZ.DrawLine(mPen, puntosT1[i], puntosB1[i]);
+                    listas[0].Items.Add(puntosT1[i].X.ToString()); listas[1].Items.Add(puntosT1[i].Y.ToString());
+                    listas[2].Items.Add(puntosB1[i].X.ToString()); listas[3].Items.Add(puntosB1[i].Y.ToString());
                     //Y
                     Point pixel = new Point();
-                    pixel.X = (int)PuntosEntreLineas[i].X;
-                    pixel.Y = (int)PuntosEntreLineas[i].Y;
-                    listas[4].Items.Add("X:  " + PuntosL[i].X.ToString()); listas[5].Items.Add("Y:  " + PuntosL[i].Y.ToString());
-                    listas[6].Items.Add("X:  " + PuntosR[i].X.ToString()); listas[7].Items.Add("Y:  " + PuntosR[i].Y.ToString());
+                    pixel.X = (int)puntosEntreLineas[i].X; 
+                    pixel.Y = (int)puntosEntreLineas[i].Y;
+                    listas[4].Items.Add(puntosL[i].X.ToString()); listas[5].Items.Add(puntosL[i].Y.ToString());
+                    listas[6].Items.Add(puntosR[i].X.ToString()); listas[7].Items.Add(puntosR[i].Y.ToString());
                     listas[12].Items.Add(pixel.X + "," + pixel.Y );
                     Rectangle rect = new Rectangle(pixel, new Size(1, 1));
                     mGraficosY.DrawRectangle(mPen, rect);
                 }
                 //X
-                mGraficosX.DrawLine(mPen, PuntosL[verificador], PuntosR[verificador]);
-                listas[8].Items.Add("X:  " + PuntosL[verificador].X.ToString()); listas[9].Items.Add("Y:  " + PuntosL[verificador].Y.ToString());
-                listas[10].Items.Add("X:  " + PuntosR[verificador].X.ToString()); listas[11].Items.Add("Y:  " + PuntosR[verificador].Y.ToString());
-                verificador++;
-            } while (verificador != rango);
+                mGraficosX.DrawLine(mPen, puntosL[verificador], puntosR[verificador]);
+                listas[8].Items.Add(puntosL[verificador].X.ToString()); listas[9].Items.Add(puntosL[verificador].Y.ToString());
+                listas[10].Items.Add(puntosR[verificador].X.ToString()); listas[11].Items.Add(puntosR[verificador].Y.ToString());
+                verificador--;
+            } while (verificador != 0);
 
         }
         public void GraficadoraRellenoX(PictureBox cuadradoX, PictureBox cuadradoY, ComboBox color, int capas)

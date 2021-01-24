@@ -1,0 +1,246 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace ProjectPrinter
+{
+    public partial class frmImpresion : Form
+    {
+        LogicaCuadrado  objCuadrado  = new LogicaCuadrado();
+        LogicaTriangulo objTriangulo = new LogicaTriangulo();
+        LogicaPentagono objPentagono = new LogicaPentagono();
+        LogicaHexagono  objHexagono  = new LogicaHexagono();
+        LogicaHeptagono objHeptagono = new LogicaHeptagono();
+        LogicaOctagono  objOctagono  = new LogicaOctagono();
+        LogicaEneagono  objEneagono  = new LogicaEneagono();
+        LogicaDecagono  objDecagono  = new LogicaDecagono();
+
+        private int opcionFigura{ get ; set ;}
+        public frmImpresion(int opcion)
+        {
+            InitializeComponent();
+            objCuadrado.InicializaDatos(txtLado, txtPerimetro, txtArea, picZ, picY, picX);
+            this.btnContorno.Enabled = !string.IsNullOrWhiteSpace(this.txtLado.Text);
+            this.opcionFigura = opcion;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGraficar_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void picSquare_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ListBox[] listaImpresion = {lstZx1, lstZy1, lstZx2, lstZy2,
+                                        lstXx1, lstXy1, lstXx2, lstXy2,
+                                        lstYx1, lstYy1, lstYx2, lstYy2,lstPunto};
+            PictureBox[] pictureBoxes = { picZ, picX, picY };
+            switch (opcionFigura)
+            {
+                case 3:
+                    objTriangulo.LeerDatos(txtLado);
+                    objTriangulo.AreayPerimetro();
+                    objTriangulo.Imprimir(txtPerimetro, txtArea, txtAltura);
+                    objTriangulo.CreadoraContorno(pictureBoxes, comboColor);
+                    objTriangulo.GraficadoraRellenoZ(pictureBoxes, comboColor, listaImpresion);
+                    break;
+                case 4:
+                    objCuadrado.LeerDatos(txtLado);
+                    objCuadrado.AreayPerimetro();
+                    objCuadrado.Imprimir(txtPerimetro, txtArea);
+                    objCuadrado.CreadoraContorno(pictureBoxes, comboColor);
+                    objCuadrado.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion);
+                    break;
+                case 5:
+                    objPentagono.LeerDatos(txtLado);
+                    objPentagono.LadoyAngulos();
+                    objPentagono.PerimetroyArea();
+                    objPentagono.ImprimirDatos(txtArea, txtPerimetro);
+                    objPentagono.graficar(pictureBoxes, comboColor, listaImpresion);
+                    break;
+                case 6:
+                    objHexagono.LeerDatos(txtLado);
+                    objHexagono.PerimeterHexagon();
+                    objHexagono.AreaHexagon();
+                    objHexagono.ImprimirDatos(txtArea, txtPerimetro);
+                    objHexagono.GraphShape(pictureBoxes, comboColor, listaImpresion);
+                    break;
+                case 7:
+                    objHeptagono.Leerdatos(txtLado);
+                    objHeptagono.perimetroyarea();
+                    objHeptagono.Procesos();
+                    objHeptagono.Impresion(pictureBoxes, comboColor, listaImpresion);
+                    break;
+                case 8:
+                    objOctagono.LeerDatos(txtLado);
+                    objOctagono.PerimeterOctagon();
+                    objOctagono.AreaOctagon();
+                    objOctagono.ImprimirDatos(txtPerimetro, txtArea);
+                    objOctagono.GraphShape(pictureBoxes, comboColor, listaImpresion);
+                    break;
+                case 9:
+                    objEneagono.limpiar(picZ);
+                    objEneagono.LeerDatos(txtLado);
+                    objEneagono.AreayPerimetro();
+                    objEneagono.ImprimirDatos(txtPerimetro, txtArea, picZ);
+                    break;
+                case 10:
+                    objDecagono.limpiar(picZ);
+                    objDecagono.LeerDatos(txtLado);
+                    objDecagono.AreaYPerimetro();
+                    objDecagono.ImprimirDatos(txtPerimetro, txtArea, picZ);
+                    break;
+            }
+
+
+        }
+
+        private void frmCuadrado_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLado_TextChanged(object sender, EventArgs e)
+        {
+            this.btnContorno.Enabled = !string.IsNullOrWhiteSpace(this.txtLado.Text);
+        }
+
+        private void groupBox6_Enter_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox7_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            PictureBox[] pictureBoxes = { picZ, picX, picY };
+            ListBox[] listaImpresion = {lstZx1, lstZy1, lstZx2, lstZy2,
+                                        lstXx1, lstXy1, lstXx2, lstXy2,
+                                        lstYx1, lstYy1, lstYx2, lstYy2,lstPunto};
+            this.txtLado.Clear();
+
+
+            for (int i = 0; i < pictureBoxes.Length; i++)
+            {
+                pictureBoxes[i].Refresh();
+            }
+            for (int j = 0; j < listaImpresion.Length; j++)
+            {
+                listaImpresion[j].Items.Clear();
+            }
+            this.txtArea.Clear();
+            this.txtPerimetro.Clear();
+            this.txtAltura.Clear();
+            this.txtVolumen.Clear();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstYy1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstYx2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
