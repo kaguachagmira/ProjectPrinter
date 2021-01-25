@@ -69,9 +69,14 @@ namespace ProjectPrinter
         }
 
         //Funcion que permite calcular el perimetro del hexagono
-        public void PerimeterHexagon()
+        public void PerimetroyArea()
         {
+            //Perimetro
             mPerimetro = 6 * mLado;
+            //Area
+            mAngle1 = 60.0f * (float)Math.PI / 180.0f;
+            mApothem = mLado * (float)Math.Sin(mAngle1);
+            mArea = mPerimetro * mApothem / 2.0f;
         }
         public void InicializarDatos(TextBox txtSide, TextBox txtPerimeter, TextBox txtArea, PictureBox picCanvas)
         {
@@ -108,7 +113,15 @@ namespace ProjectPrinter
             mD.X = (2.0f * mSegmentB + mLado) * SF;
             mD.Y = mApothem * SF;
         }
-        public void GraphShape(PictureBox[] pictureBoxes, ComboBox color, ListBox[] listas)
+        public void CreadoraRelleno(PictureBox[] pictureBoxes, ComboBox color, ListBox[] listas)
+        {
+            DeterminarPuntos();
+            Thread.CurrentThread.IsBackground = true;
+            Thread graficoZR = new Thread(new ThreadStart(() => GraficadoraRellenoZ(pictureBoxes, color, listas)));
+            graficoZR.Start();
+            graficoZR.Join();
+        }
+        public void GraficadoraRellenoZ(PictureBox[] pictureBoxes, ComboBox color, ListBox[] listas)
         {
             int rango = ((int)mLado * (int)SF);
             int veri = 0;

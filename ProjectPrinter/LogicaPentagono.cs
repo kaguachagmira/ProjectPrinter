@@ -100,7 +100,7 @@ namespace ProjectPrinter
             mAp = (1 / 2 * (float)Math.Tan(Angulob));
         }
 
-        public void PerimetroyArea()
+        public void AreayPerimetro()
         {
             mPerimetro = mLado * 5;
             mArea = ((mPerimetro) * mAp) / 2;
@@ -127,7 +127,15 @@ namespace ProjectPrinter
             mE.X = 0.0f * SF;
             mE.Y = (mLadoa) * SF;
         }
-        public void graficar(PictureBox[] pictureBoxes, ComboBox color, ListBox[] listas)
+        public void CreadoraRelleno(PictureBox[] pictureBoxes, ComboBox color, ListBox[] listas)
+        {
+            DeterminarPuntos();
+            Thread.CurrentThread.IsBackground = true;
+            Thread graficoZR = new Thread(new ThreadStart(() => GraficadoraRellenoZ(pictureBoxes, color, listas)));
+            graficoZR.Start();
+            graficoZR.Join();
+        }
+        public void GraficadoraRellenoZ(PictureBox[] pictureBoxes, ComboBox color, ListBox[] listas)
         {
             int rango = ((int)mLado * (int)SF);
             int veri = 0;

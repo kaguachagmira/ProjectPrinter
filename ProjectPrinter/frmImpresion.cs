@@ -80,49 +80,39 @@ namespace ProjectPrinter
                 case 3:
                     objTriangulo.LeerDatos(txtLado);
                     objTriangulo.AreayPerimetro();
-                    objTriangulo.Imprimir(txtPerimetro, txtArea, txtAltura);
-                    objTriangulo.CreadoraContorno(pictureBoxes, comboColor);
-                    objTriangulo.GraficadoraRellenoZ(pictureBoxes, comboColor, listaImpresion);
+                    objTriangulo.ImprimirDatos(txtPerimetro, txtArea, txtAltura);
+                    objTriangulo.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion);
                     break;
                 case 4:
                     objCuadrado.LeerDatos(txtLado);
                     objCuadrado.AreayPerimetro();
-                    objCuadrado.Imprimir(txtPerimetro, txtArea);
-                    objCuadrado.CreadoraContorno(pictureBoxes, comboColor);
+                    objCuadrado.ImprimirDatos(txtPerimetro, txtArea);
                     objCuadrado.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion);
                     break;
                 case 5:
                     objPentagono.LeerDatos(txtLado);
                     objPentagono.LadoyAngulos();
-                    objPentagono.PerimetroyArea();
+                    objPentagono.AreayPerimetro();
                     objPentagono.ImprimirDatos(txtArea, txtPerimetro);
-                    objPentagono.graficar(pictureBoxes, comboColor, listaImpresion);
+                    objPentagono.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion);
                     break;
                 case 6:
                     objHexagono.LeerDatos(txtLado);
-                    objHexagono.PerimeterHexagon();
-                    objHexagono.AreaHexagon();
+                    objHexagono.PerimetroyArea();
                     objHexagono.ImprimirDatos(txtArea, txtPerimetro);
-                    objHexagono.GraphShape(pictureBoxes, comboColor, listaImpresion);
+                    objHexagono.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion);
                     break;
                 case 7:
                     objHeptagono.Leerdatos(txtLado);
-                    objHeptagono.perimetroyarea();
-                    objHeptagono.Procesos();
-                    objHeptagono.Impresion(pictureBoxes, comboColor, listaImpresion);
+                    objHeptagono.AreayPerimetro();
+                    objHeptagono.LadoyAngulos();
+                    objHeptagono.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion);
                     break;
                 case 8:
                     objOctagono.LeerDatos(txtLado);
-                    objOctagono.PerimeterOctagon();
-                    objOctagono.AreaOctagon();
+                    objOctagono.AreayPerimetro();
                     objOctagono.ImprimirDatos(txtPerimetro, txtArea);
-                    objOctagono.GraphShape(pictureBoxes, comboColor, listaImpresion);
-                    break;
-                case 9:
-                    objEneagono.limpiar(picZ);
-                    objEneagono.LeerDatos(txtLado);
-                    objEneagono.AreayPerimetro();
-                    objEneagono.ImprimirDatos(txtPerimetro, txtArea, picZ);
+                    objOctagono.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion);
                     break;
                 case 10:
                     objDecagono.limpiar(picZ);

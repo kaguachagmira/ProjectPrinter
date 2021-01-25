@@ -164,7 +164,7 @@ namespace ProjectPrinter
             this.btnContorno.Name = "btnContorno";
             this.btnContorno.Size = new System.Drawing.Size(122, 36);
             this.btnContorno.TabIndex = 7;
-            this.btnContorno.Text = "Imprimir contorno";
+            this.btnContorno.Text = "Imprimir";
             this.btnContorno.UseVisualStyleBackColor = true;
             this.btnContorno.Click += new System.EventHandler(this.button1_Click);
             // 

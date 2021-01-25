@@ -68,7 +68,7 @@ namespace ProjectPrinter
             }
 
         }
-        public void Procesos()
+        public void LadoyAngulos()
         {
             //Primero los angulos
             Angulo1 = 51.42f * (float)Math.PI / 180.0f;
@@ -91,7 +91,7 @@ namespace ProjectPrinter
             mLadoh = mLadof * (float)Math.Sin(Angulo4);
 
         }
-        public void perimetroyarea()
+        public void AreayPerimetro()
         {
             mPerimetro = mLado * 7.0f;
             mArea = (mPerimetro * mAp) / 2;
@@ -123,7 +123,15 @@ namespace ProjectPrinter
         {
             heptagono.Refresh();
         }
-        public void Impresion(PictureBox[] pictureBoxes, ComboBox color, ListBox[] lista)
+        public void CreadoraRelleno(PictureBox[] pictureBoxes, ComboBox color, ListBox[] listas)
+        {
+            DeterminarPuntos();
+            Thread.CurrentThread.IsBackground = true;
+            Thread graficoZR = new Thread(new ThreadStart(() => GraficadoraRellenoZ(pictureBoxes, color, listas)));
+            graficoZR.Start();
+            graficoZR.Join();
+        }
+        public void GraficadoraRellenoZ(PictureBox[] pictureBoxes, ComboBox color, ListBox[] lista)
         {
 
             int rango = ((int)mLado * (int)SF);
@@ -182,7 +190,6 @@ namespace ProjectPrinter
                 mGraficosX.DrawLine(mPen, puntosIzquierda[veri], puntosDerecha[veri]);
                 veri--;
             } while (veri != 0);
-
 
 
 

@@ -57,21 +57,17 @@ namespace ProjectPrinter
             txtPerimeter.Text = mPerimetro.ToString();
             txtArea.Text = mArea.ToString();
         }
-
-        //Funcion que permite calcular el perimetro
-        public void AreaOctagon()
+        //Funcion que permite calcular el perimetro del hexagono
+        public void AreayPerimetro()
         {
+            //Permite
+            mPerimetro = 8 * mLado;
+            //Area
             mAngle1 = 45.0f * (float)Math.PI / 180.0f;
             mAngle2 = 22.5f * (float)Math.PI / 180.0f;
 
             mApothem = mLado / 2 * (float)Math.Tan(mAngle2);
             mArea = mPerimetro * mApothem / 2.0f;
-        }
-
-        //Funcion que permite calcular el perimetro del hexagono
-        public void PerimeterOctagon()
-        {
-            mPerimetro = 8 * mLado;
         }
         public void InicializarDatos(TextBox txtSide, TextBox txtPerimeter, TextBox txtArea, PictureBox picCanvas)
         {
@@ -114,7 +110,15 @@ namespace ProjectPrinter
             mH.X = 0.0f * SF;
             mH.Y = mSegmentB * SF;
         }
-        public void GraphShape(PictureBox[] pictureBoxes, ComboBox color, ListBox[] listas)
+        public void CreadoraRelleno(PictureBox[] pictureBoxes, ComboBox color, ListBox[] listas)
+        {
+            DeterminarPuntos();
+            Thread.CurrentThread.IsBackground = true;
+            Thread graficoZR = new Thread(new ThreadStart(() => GraficadoraRellenoZ(pictureBoxes, color, listas)));
+            graficoZR.Start();
+            graficoZR.Join();
+        }
+        public void GraficadoraRellenoZ(PictureBox[] pictureBoxes, ComboBox color, ListBox[] listas)
         {
             if (mLado >= 5)
                 mLado = 4;

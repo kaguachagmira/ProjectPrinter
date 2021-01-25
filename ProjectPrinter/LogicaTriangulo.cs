@@ -62,14 +62,14 @@ namespace ProjectPrinter
             mArea = (mLado * mAltura) / 2;
             mPerimetro = mLado + mLado + mLado;
         }
-        public void Imprimir(TextBox perimetro, TextBox Area, TextBox altura)
+        public void ImprimirDatos(TextBox perimetro, TextBox Area, TextBox altura)
         {
             perimetro.Text = mPerimetro.ToString();
             Area.Text = mArea.ToString();
             altura.Text = mAltura.ToString();
         }
 
-        public void PuntosPerfil()
+        public void DeterminarPuntos()
         {
             mA.X = (mLado/2) * SF + CENTRADOX;
             mA.Y = (0.0f * SF) + CENTRADOY;
@@ -80,22 +80,13 @@ namespace ProjectPrinter
             mC.X = mLado *SF + CENTRADOX;
             mC.Y = mAltura * SF + CENTRADOY;
         }
-        public void CreadoraContorno(PictureBox[] pictureBoxes, ComboBox color)
+        public void CreadoraRelleno(PictureBox[] pictureBoxes, ComboBox color, ListBox[] listas)
         {
-            PuntosPerfil();
-            Thread graficoZC = new Thread(new ThreadStart(() => GraficadoraContorno(pictureBoxes, color)));
-            graficoZC.Start();
-            graficoZC.Join();
-        }
-        public void GraficadoraContorno(PictureBox[] pictureBoxes, ComboBox color)
-        {
-            mGraficosZ = pictureBoxes[0].CreateGraphics();
-            mPen = SeleccionarColor(color);
-
-            mGraficosZ.DrawLine(mPen,mA,mB);
-            mGraficosZ.DrawLine(mPen,mA,mC);
-            mGraficosZ.DrawLine(mPen,mB,mC);
-
+            DeterminarPuntos();
+            Thread.CurrentThread.IsBackground = true;
+            Thread graficoZR = new Thread(new ThreadStart(() => GraficadoraRellenoZ(pictureBoxes, color, listas)));
+            graficoZR.Start();
+            graficoZR.Join();
         }
         public void GraficadoraRellenoZ(PictureBox[] pictureBoxes, ComboBox color, ListBox[] listas)
         {

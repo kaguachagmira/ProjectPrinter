@@ -74,12 +74,12 @@ namespace ProjectPrinter
             mArea = (float)Math.Pow(mLado, 2);
             mPerimetro = mLado * 4;
         }
-        public void Imprimir(TextBox perimetro, TextBox Area)
+        public void ImprimirDatos(TextBox perimetro, TextBox Area)
         {
             perimetro.Text = mArea.ToString();
             Area.Text = mPerimetro.ToString();
         }
-        public void PuntosPerfil()
+        public void DeterminarPuntos()
         {
             mA.X = (0.0f * SF) + CENTRADOX;
             mA.Y = (0.0f * SF) + CENTRADOY;
@@ -95,17 +95,11 @@ namespace ProjectPrinter
         }
         public void CreadoraRelleno(PictureBox[] pictureBoxes, ComboBox color, ListBox[] listas)
         {
+            DeterminarPuntos();
             Thread.CurrentThread.IsBackground = true;
             Thread graficoZR = new Thread(new ThreadStart(() => GraficadoraRellenoZ(pictureBoxes, color, listas)));
             graficoZR.Start();
             graficoZR.Join();
-        }
-        public void CreadoraContorno(PictureBox[] pictureBoxes, ComboBox color)
-        {
-            PuntosPerfil();
-            Thread graficoZC = new Thread(new ThreadStart(() => GraficadoraContorno(pictureBoxes, color)));
-            graficoZC.Start();
-            graficoZC.Join();
         }
         public void GraficadoraContorno(PictureBox[] pictureBoxes, ComboBox color)
         {
