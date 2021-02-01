@@ -28,9 +28,34 @@ namespace ProjectPrinter
             objCuadrado.InicializaDatos(txtLado, txtPerimetro, txtArea, picZ, picY, picX);
             this.btnContorno.Enabled = !string.IsNullOrWhiteSpace(this.txtLado.Text);
             this.opcionFigura = opcion;
+            switch (opcionFigura)
+            {
+                case 3:
+                    picInfo.Image = new Bitmap(Application.StartupPath + @"/math/triangulo.png");
+                    break;
+                case 4:
+                    picInfo.Image = new Bitmap(Application.StartupPath + @"/math/triangulo.png");
+                    break;
+                case 5:
+                    picInfo.Image = new Bitmap(Application.StartupPath + @"/math/pentagono.png");
+                    break;
+                case 6:
+                    picInfo.Image = new Bitmap(Application.StartupPath + @"/math/hexagono.png");
+                    break;
+                case 7:
+                    picInfo.Image = new Bitmap(Application.StartupPath + @"/math/heptagono.png");
+                    break;
+                case 8:
+                    picInfo.Image = new Bitmap(Application.StartupPath + @"/math/octagono.png");
+                    break;
+                case 10:
+                    picInfo.Image = new Bitmap(Application.StartupPath + @"/math/decagono.png");
+                    break;
+
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+            private void label1_Click(object sender, EventArgs e)
         {
 
         }
@@ -78,7 +103,7 @@ namespace ProjectPrinter
             switch (opcionFigura)
             {
                 case 3:
-                    objTriangulo.LeerDatos(txtLado);
+                    objTriangulo.LeerDatos(txtLado, picInfo);
                     objTriangulo.AreayPerimetro();
                     objTriangulo.ImprimirDatos(txtPerimetro, txtArea, txtAltura);
                     objTriangulo.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion);

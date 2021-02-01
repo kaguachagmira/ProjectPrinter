@@ -12,9 +12,8 @@ namespace ProjectPrinter
 {
     class LogicaTriangulo
     {
-        //Variables para el cuadrado
-        const int CENTRADOX = 30;
-        const int CENTRADOY = 10;
+        const int CENTRADOX = 105;
+        const int CENTRADOY = 50;
         private float mLado;
         private float mPerimetro;
         private float mArea;
@@ -44,11 +43,15 @@ namespace ProjectPrinter
             mArea = 0.0f;
             mAltura = 0.0f;
         }
-        public void LeerDatos(TextBox lado)
+        public void LeerDatos(TextBox lado, PictureBox picInfo)
         {
             try
             {
                 mLado = float.Parse(lado.Text);
+                if (mLado >= 8)
+                {
+                    mLado = 7;
+                }
             }
             catch (Exception ex)
             {
@@ -92,11 +95,11 @@ namespace ProjectPrinter
         {
             int verificador = ((int)mLado * 10)-2;
             int rango = (int)mLado * 10;
+
             mGraficosZ = pictureBoxes[0].CreateGraphics();
             mGraficosX = pictureBoxes[1].CreateGraphics();
             mGraficosY = pictureBoxes[2].CreateGraphics();
             PointF[] puntosEntreLineas;
-
 
             //Z
             PointF[] puntosIzquierda;
@@ -116,15 +119,23 @@ namespace ProjectPrinter
                     Thread.Sleep(10);
                     //Z
                     mGraficosZ.DrawLine(mPen, puntosIzquierda[k], puntosDerecha[k]);
+                    listas[0].Items.Add(puntosIzquierda[k].X.ToString()); listas[1].Items.Add(puntosIzquierda[k].Y.ToString());
+                    listas[2].Items.Add(puntosDerecha[k].X.ToString()); listas[3].Items.Add(puntosDerecha[k].Y.ToString());
                     //Y
-                    
+
                     Point pixel = new Point();
                     pixel.X = (int)puntosEntreLineas[k].X;
                     pixel.Y = (int)puntosEntreLineas[k].Y;
+                    listas[4].Items.Add(puntosIzquierda[k].X.ToString()); listas[5].Items.Add(puntosIzquierda[k].Y.ToString());
+                    listas[6].Items.Add(puntosDerecha[k].X.ToString()); listas[7].Items.Add(puntosDerecha[k].Y.ToString());
+                    listas[12].Items.Add(pixel.X + "," + pixel.Y);
+
                     Rectangle rect = new Rectangle(pixel, new Size(1, 1));
                     mGraficosY.DrawRectangle(mPen, rect);
                 }
                 mGraficosX.DrawLine(mPen, puntosIzquierda[verificador], puntosDerecha[verificador]);
+                listas[8].Items.Add(puntosIzquierda[verificador].X.ToString()); listas[9].Items.Add(puntosIzquierda[verificador].Y.ToString());
+                listas[10].Items.Add(puntosDerecha[verificador].X.ToString()); listas[11].Items.Add(puntosDerecha[verificador].Y.ToString());
                 verificador--;
             } while (verificador != 0);
         }

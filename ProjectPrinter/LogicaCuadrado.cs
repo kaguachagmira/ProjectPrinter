@@ -15,8 +15,8 @@ namespace ProjectPrinter
     public class LogicaCuadrado
     {
         //Variables para el cuadrado
-        const int CENTRADOX = 30;
-        const int CENTRADOY = 20;
+        const int CENTRADOX = 105;
+        const int CENTRADOY = 10;
         private float mLado;
         private float mPerimetro;
         private float mArea;
@@ -63,6 +63,10 @@ namespace ProjectPrinter
             try
             {
                 mLado = float.Parse(lado.Text);
+                if(mLado >= 8)
+                {
+                    mLado = 7;
+                }
             }
             catch (Exception ex)
             {

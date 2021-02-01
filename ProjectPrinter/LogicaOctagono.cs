@@ -12,7 +12,8 @@ namespace ProjectPrinter
 {
     class LogicaOctagono
     {
-
+        const int CENTRADOX = 105;
+        const int CENTRADOY = 50;
         private float mLado;
         private float mPerimetro;
         private float mArea;
@@ -86,29 +87,29 @@ namespace ProjectPrinter
         {
             mSegmentB = mLado * (float)Math.Cos(mAngle1);
 
-            mA.X = mSegmentB * SF;
-            mA.Y = 0.0f * SF;
+            mA.X = (mSegmentB * SF)+ CENTRADOX;
+            mA.Y = (0.0f * SF)+ CENTRADOY;
 
-            mB.X = (mSegmentB + mLado) * SF;
-            mB.Y = 0.0f * SF;
+            mB.X = ((mSegmentB + mLado) * SF)+ CENTRADOX;
+            mB.Y = (0.0f * SF)+ CENTRADOY;
 
-            mC.X = (2 * mSegmentB + mLado) * SF;
-            mC.Y = mSegmentB * SF;
+            mC.X = ((2 * mSegmentB + mLado) * SF)+ CENTRADOX;
+            mC.Y = (mSegmentB * SF)+ CENTRADOY;
 
-            mE.X = (mSegmentB + mLado) * SF;
-            mE.Y = (2.0f * mSegmentB + mLado) * SF;
+            mE.X = ((mSegmentB + mLado) * SF)+ CENTRADOX;
+            mE.Y = ((2.0f * mSegmentB + mLado) * SF)+ CENTRADOY;
 
-            mF.X = mSegmentB * SF;
-            mF.Y = (2.0f * mSegmentB + mLado) * SF;
+            mF.X = (mSegmentB * SF)+ CENTRADOX;
+            mF.Y = ((2.0f * mSegmentB + mLado) * SF)+ CENTRADOY;
 
-            mD.X = (2.0f * mSegmentB + mLado) * SF;
-            mD.Y = (mLado + mSegmentB) * SF;
+            mD.X = ((2.0f * mSegmentB + mLado) * SF)+ CENTRADOX;
+            mD.Y = ((mLado + mSegmentB) * SF)+ CENTRADOY;
 
-            mG.X = 0.0f * SF;
-            mG.Y = (mSegmentB + mLado) * SF;
+            mG.X = (0.0f * SF)+ CENTRADOX;
+            mG.Y = ((mSegmentB + mLado) * SF)+ CENTRADOY;
 
-            mH.X = 0.0f * SF;
-            mH.Y = mSegmentB * SF;
+            mH.X = (0.0f * SF)+ CENTRADOX;
+            mH.Y = (mSegmentB * SF)+ CENTRADOY;
         }
         public void CreadoraRelleno(PictureBox[] pictureBoxes, ComboBox color, ListBox[] listas)
         {
@@ -161,14 +162,21 @@ namespace ProjectPrinter
                     Thread.Sleep(5);
                     //Z
                     mGraficosZ.DrawLine(mPen, puntosIzquierda[k], puntosDerecha[k]);
+                    listas[0].Items.Add(puntosIzquierda[k].X.ToString()); listas[1].Items.Add(puntosIzquierda[k].Y.ToString());
+                    listas[2].Items.Add(puntosDerecha[k].X.ToString()); listas[3].Items.Add(puntosDerecha[k].Y.ToString());
                     //Y
                     Point pixel = new Point();
                     pixel.X = (int)puntosEntreLineas[k].X;
                     pixel.Y = (int)puntosEntreLineas[k].Y;
+                    listas[4].Items.Add(puntosIzquierda[k].X.ToString()); listas[5].Items.Add(puntosIzquierda[k].Y.ToString());
+                    listas[6].Items.Add(puntosDerecha[k].X.ToString()); listas[7].Items.Add(puntosDerecha[k].Y.ToString());
+                    listas[12].Items.Add(pixel.X + "," + pixel.Y);
                     Rectangle rect = new Rectangle(pixel, new Size(1, 1));
                     mGraficosY.DrawRectangle(mPen, rect);
                 }
                 mGraficosX.DrawLine(mPen, puntosIzquierda[veri], puntosDerecha[veri]);
+                listas[8].Items.Add(puntosIzquierda[veri].X.ToString()); listas[9].Items.Add(puntosDerecha[veri].Y.ToString());
+                listas[10].Items.Add(puntosDerecha[veri].X.ToString()); listas[11].Items.Add(puntosDerecha[veri].Y.ToString());
                 veri--;
             } while (veri != 0);
         }

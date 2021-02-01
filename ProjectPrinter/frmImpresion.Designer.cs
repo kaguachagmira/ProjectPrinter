@@ -29,7 +29,6 @@ namespace ProjectPrinter
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmImpresion));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboColor = new System.Windows.Forms.ComboBox();
@@ -45,7 +44,7 @@ namespace ProjectPrinter
             this.txtAltura = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picInfo = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPerimetro = new System.Windows.Forms.TextBox();
@@ -95,7 +94,7 @@ namespace ProjectPrinter
             ((System.ComponentModel.ISupportInitialize)(this.picZ)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInfo)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picX)).BeginInit();
@@ -275,7 +274,7 @@ namespace ProjectPrinter
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.picInfo);
             this.groupBox2.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox2.Location = new System.Drawing.Point(14, 66);
             this.groupBox2.Name = "groupBox2";
@@ -285,15 +284,14 @@ namespace ProjectPrinter
             this.groupBox2.Text = "Algoritmo de Bresenham";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // pictureBox1
+            // picInfo
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(8, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(204, 158);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            this.picInfo.Location = new System.Drawing.Point(4, 19);
+            this.picInfo.Name = "picInfo";
+            this.picInfo.Size = new System.Drawing.Size(217, 249);
+            this.picInfo.TabIndex = 0;
+            this.picInfo.TabStop = false;
+            this.picInfo.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // label4
             // 
@@ -772,7 +770,7 @@ namespace ProjectPrinter
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInfo)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picX)).EndInit();
@@ -855,7 +853,7 @@ namespace ProjectPrinter
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ListBox lstPunto;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picInfo;
         private System.Windows.Forms.TextBox txtVolumen;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtAltura;
