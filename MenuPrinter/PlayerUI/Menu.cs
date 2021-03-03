@@ -78,7 +78,6 @@ namespace PlayerUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -104,6 +103,16 @@ namespace PlayerUI
         private void btnTools_Click(object sender, EventArgs e)
         {
             openChildForm(new frmImpresion(6));
+
+        }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
+        }
+
+        private void panelChildForm_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

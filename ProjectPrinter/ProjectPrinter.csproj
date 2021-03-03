@@ -54,7 +54,6 @@
     </Compile>
     <Compile Include="LogicaCuadrado.cs" />
     <Compile Include="LogicaDecagono.cs" />
-    <Compile Include="LogicaEneagono.cs" />
     <Compile Include="LogicaHeptagono.cs" />
     <Compile Include="LogicaHexagono.cs" />
     <Compile Include="LogicaOctagono.cs" />

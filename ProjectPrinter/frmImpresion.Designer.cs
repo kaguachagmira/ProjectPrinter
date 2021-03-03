@@ -89,6 +89,8 @@ namespace ProjectPrinter
             this.label16 = new System.Windows.Forms.Label();
             this.lstXy2 = new System.Windows.Forms.ListBox();
             this.lstXx2 = new System.Windows.Forms.ListBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.comboVelocidad = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.Grafico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picZ)).BeginInit();
@@ -113,6 +115,8 @@ namespace ProjectPrinter
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboVelocidad);
+            this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.comboColor);
             this.groupBox1.Controls.Add(this.btnContorno);
@@ -132,7 +136,7 @@ namespace ProjectPrinter
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(17, 54);
+            this.label2.Location = new System.Drawing.Point(17, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 13);
             this.label2.TabIndex = 10;
@@ -149,19 +153,20 @@ namespace ProjectPrinter
             "Rojo",
             "Amarillo",
             "Verde",
-            "Café"});
-            this.comboColor.Location = new System.Drawing.Point(177, 51);
+            "Café",
+            "Random"});
+            this.comboColor.Location = new System.Drawing.Point(164, 53);
             this.comboColor.Name = "comboColor";
-            this.comboColor.Size = new System.Drawing.Size(55, 21);
+            this.comboColor.Size = new System.Drawing.Size(68, 21);
             this.comboColor.TabIndex = 9;
             this.comboColor.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnContorno
             // 
             this.btnContorno.ForeColor = System.Drawing.Color.Black;
-            this.btnContorno.Location = new System.Drawing.Point(58, 90);
+            this.btnContorno.Location = new System.Drawing.Point(14, 133);
             this.btnContorno.Name = "btnContorno";
-            this.btnContorno.Size = new System.Drawing.Size(122, 36);
+            this.btnContorno.Size = new System.Drawing.Size(98, 26);
             this.btnContorno.TabIndex = 7;
             this.btnContorno.Text = "Imprimir";
             this.btnContorno.UseVisualStyleBackColor = true;
@@ -170,9 +175,9 @@ namespace ProjectPrinter
             // btnReset
             // 
             this.btnReset.ForeColor = System.Drawing.Color.Black;
-            this.btnReset.Location = new System.Drawing.Point(58, 132);
+            this.btnReset.Location = new System.Drawing.Point(134, 133);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(122, 36);
+            this.btnReset.Size = new System.Drawing.Size(98, 26);
             this.btnReset.TabIndex = 3;
             this.btnReset.Text = "Resetear";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -180,9 +185,9 @@ namespace ProjectPrinter
             // 
             // txtLado
             // 
-            this.txtLado.Location = new System.Drawing.Point(177, 20);
+            this.txtLado.Location = new System.Drawing.Point(164, 20);
             this.txtLado.Name = "txtLado";
-            this.txtLado.Size = new System.Drawing.Size(55, 20);
+            this.txtLado.Size = new System.Drawing.Size(68, 20);
             this.txtLado.TabIndex = 1;
             this.txtLado.TextChanged += new System.EventHandler(this.txtLado_TextChanged);
             // 
@@ -281,7 +286,7 @@ namespace ProjectPrinter
             this.groupBox2.Size = new System.Drawing.Size(226, 282);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Algoritmo de Bresenham";
+            this.groupBox2.Text = "Lógica Figura";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // picInfo
@@ -746,6 +751,33 @@ namespace ProjectPrinter
             this.lstXx2.Size = new System.Drawing.Size(30, 95);
             this.lstXx2.TabIndex = 2;
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.ForeColor = System.Drawing.Color.Silver;
+            this.label20.Location = new System.Drawing.Point(17, 91);
+            this.label20.Name = "label20";
+            this.label20.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label20.Size = new System.Drawing.Size(120, 13);
+            this.label20.TabIndex = 11;
+            this.label20.Text = "Selecciona la velocidad";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
+            // 
+            // comboVelocidad
+            // 
+            this.comboVelocidad.BackColor = System.Drawing.SystemColors.Window;
+            this.comboVelocidad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboVelocidad.FormattingEnabled = true;
+            this.comboVelocidad.Items.AddRange(new object[] {
+            "Lento",
+            "Normal",
+            "Rápido",
+            "Muy Rápido"});
+            this.comboVelocidad.Location = new System.Drawing.Point(164, 88);
+            this.comboVelocidad.Name = "comboVelocidad";
+            this.comboVelocidad.Size = new System.Drawing.Size(68, 21);
+            this.comboVelocidad.TabIndex = 12;
+            // 
             // frmImpresion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -858,5 +890,7 @@ namespace ProjectPrinter
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtAltura;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ComboBox comboVelocidad;
     }
 }

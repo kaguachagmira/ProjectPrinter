@@ -38,6 +38,7 @@ namespace ProjectPrinter
         private PointF mB;
         private PointF mC;
         private PointF mD;
+        private int velocidad;
 
         private PictureBox myPic;
         public LogicaCuadrado()
@@ -97,13 +98,34 @@ namespace ProjectPrinter
             mC.X = (0.0f * SF) + CENTRADOX;
             mC.Y = (mLado * SF) + CENTRADOY;
         }
-        public void CreadoraRelleno(PictureBox[] pictureBoxes, ComboBox color, ListBox[] listas)
+        public void CreadoraRelleno(PictureBox[] pictureBoxes, ComboBox color, ListBox[] listas, ComboBox velocidad)
         {
             DeterminarPuntos();
             Thread.CurrentThread.IsBackground = true;
+            this.velocidad = DeterminarVelocidad(velocidad);
             Thread graficoZR = new Thread(new ThreadStart(() => GraficadoraRellenoZ(pictureBoxes, color, listas)));
             graficoZR.Start();
             graficoZR.Join();
+        }
+        public int DeterminarVelocidad(ComboBox velocidad)
+        {
+            if (velocidad.SelectedItem == "Lento")
+            {
+                return 30;
+            }
+            if(velocidad.SelectedItem == "Normal")
+            {
+                return 20;
+            }
+            if (velocidad.SelectedItem == "Rápido")
+            {
+                return 10;
+            }
+            if (velocidad.SelectedItem == "Muy Rápido")
+            {
+                return 1;
+            }
+            return 0;
         }
         public void GraficadoraContorno(PictureBox[] pictureBoxes, ComboBox color)
         {
@@ -149,7 +171,7 @@ namespace ProjectPrinter
                 for (int i = puntosL.Length-2; i > 0; i--)
                 {
                     //Z
-                    Thread.Sleep(20);
+                    Thread.Sleep(this.velocidad);
                     mGraficosZ.DrawLine(mPen, puntosT1[i], puntosB1[i]);
                     listas[0].Items.Add(puntosT1[i].X.ToString()); listas[1].Items.Add(puntosT1[i].Y.ToString());
                     listas[2].Items.Add(puntosB1[i].X.ToString()); listas[3].Items.Add(puntosB1[i].Y.ToString());
@@ -215,32 +237,39 @@ namespace ProjectPrinter
         }
         public Pen SeleccionarColor(ComboBox color)
         {
-            var random = new Random();
-            int aleatorio = random.Next(1, 5);
+            if(color.SelectedItem == "Random")
+            {
+                var random = new Random();
+                int aleatorio = random.Next(1, 5);
 
-            if (aleatorio == 1)
-                return new Pen(Color.Blue, 3);
-            if (aleatorio == 2)
-                return new Pen(Color.Red, 3);
-            if (aleatorio == 3)
-                return new Pen(Color.FromArgb(66, 230, 245), 3);
-            if (aleatorio == 4)
-                return new Pen(Color.Green, 3);
-            if (aleatorio == 5)
-                return new Pen(Color.Brown, 3);
-            return new Pen(Color.Black, 3);
-            /*
-            if (color.SelectedItem == "Azul")
-                return new Pen(Color.Blue, 3);
-            if (color.SelectedItem == "Rojo")
-                return new Pen(Color.Red, 3);
-            if (color.SelectedItem == "Amarillo")
-                return new Pen(Color.FromArgb(66, 230, 245), 3);
-            if (color.SelectedItem == "Verde")
-                return new Pen(Color.Green, 3);
-            if (color.SelectedItem == "Café")
-                return new Pen(Color.Brown, 3);
-            return new Pen(Color.Black, 3);*/
+                if (aleatorio == 1)
+                    return new Pen(Color.Blue, 3);
+                if (aleatorio == 2)
+                    return new Pen(Color.Red, 3);
+                if (aleatorio == 3)
+                    return new Pen(Color.Yellow, 3);
+                if (aleatorio == 4)
+                    return new Pen(Color.Green, 3);
+                if (aleatorio == 5)
+                    return new Pen(Color.Brown, 3);
+                return new Pen(Color.Black, 3);
+            }
+
+            else
+            {
+                if (color.SelectedItem == "Azul")
+                    return new Pen(Color.Blue, 3);
+                if (color.SelectedItem == "Rojo")
+                    return new Pen(Color.Red, 3);
+                if (color.SelectedItem == "Amarillo")
+                    return new Pen(Color.Yellow,3);
+                if (color.SelectedItem == "Verde")
+                    return new Pen(Color.Green, 3);
+                if (color.SelectedItem == "Café")
+                    return new Pen(Color.Brown, 3);
+                return new Pen(Color.Black, 3); 
+            }
+
         }
     }
 }

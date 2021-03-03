@@ -18,7 +18,6 @@ namespace ProjectPrinter
         LogicaHexagono  objHexagono  = new LogicaHexagono();
         LogicaHeptagono objHeptagono = new LogicaHeptagono();
         LogicaOctagono  objOctagono  = new LogicaOctagono();
-        LogicaEneagono  objEneagono  = new LogicaEneagono();
         LogicaDecagono  objDecagono  = new LogicaDecagono();
 
         private int opcionFigura{ get ; set ;}
@@ -34,7 +33,7 @@ namespace ProjectPrinter
                     picInfo.Image = new Bitmap(Application.StartupPath + @"/math/triangulo.png");
                     break;
                 case 4:
-                    picInfo.Image = new Bitmap(Application.StartupPath + @"/math/triangulo.png");
+                    picInfo.Image = new Bitmap(Application.StartupPath + @"/math/cuadrado.png");
                     break;
                 case 5:
                     picInfo.Image = new Bitmap(Application.StartupPath + @"/math/pentagono.png");
@@ -106,38 +105,38 @@ namespace ProjectPrinter
                     objTriangulo.LeerDatos(txtLado, picInfo);
                     objTriangulo.AreayPerimetro();
                     objTriangulo.ImprimirDatos(txtPerimetro, txtArea, txtAltura);
-                    objTriangulo.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion);
+                    objTriangulo.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion, comboVelocidad);
                     break;
                 case 4:
                     objCuadrado.LeerDatos(txtLado);
                     objCuadrado.AreayPerimetro();
                     objCuadrado.ImprimirDatos(txtPerimetro, txtArea);
-                    objCuadrado.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion);
+                    objCuadrado.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion, comboVelocidad);
                     break;
                 case 5:
                     objPentagono.LeerDatos(txtLado);
                     objPentagono.LadoyAngulos();
                     objPentagono.AreayPerimetro();
                     objPentagono.ImprimirDatos(txtArea, txtPerimetro);
-                    objPentagono.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion);
+                    objPentagono.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion, comboVelocidad);
                     break;
                 case 6:
                     objHexagono.LeerDatos(txtLado);
                     objHexagono.PerimetroyArea();
                     objHexagono.ImprimirDatos(txtArea, txtPerimetro);
-                    objHexagono.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion);
+                    objHexagono.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion, comboVelocidad);
                     break;
                 case 7:
                     objHeptagono.Leerdatos(txtLado);
                     objHeptagono.AreayPerimetro();
                     objHeptagono.LadoyAngulos();
-                    objHeptagono.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion);
+                    objHeptagono.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion, comboVelocidad);
                     break;
                 case 8:
                     objOctagono.LeerDatos(txtLado);
                     objOctagono.AreayPerimetro();
                     objOctagono.ImprimirDatos(txtPerimetro, txtArea);
-                    objOctagono.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion);
+                    objOctagono.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion, comboVelocidad);
                     break;
                 case 10:
                     objDecagono.limpiar(picZ);
@@ -254,6 +253,11 @@ namespace ProjectPrinter
         }
 
         private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
         {
 
         }
