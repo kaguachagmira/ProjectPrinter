@@ -31,6 +31,7 @@ namespace ProjectPrinter
         private PointF mB;
         private PointF mC;
         private int velocidad;
+        private double mvolumen;
 
         public void InicializaDatos(TextBox lado, TextBox perimetro, TextBox area, TextBox altura, PictureBox cuadrado)
         {
@@ -65,12 +66,14 @@ namespace ProjectPrinter
             mAltura = (float)Math.Sin(radians)*mLado;
             mArea = (mLado * mAltura) / 2;
             mPerimetro = mLado + mLado + mLado;
+            mvolumen = (double)Math.Pow((double)mLado, 2) * mAltura * ((double)Math.Sqrt(3) / 4);
         }
-        public void ImprimirDatos(TextBox perimetro, TextBox Area, TextBox altura)
+        public void ImprimirDatos(TextBox perimetro, TextBox area, TextBox altura, TextBox volumen)
         {
             perimetro.Text = mPerimetro.ToString();
-            Area.Text = mArea.ToString();
+            area.Text = mArea.ToString();
             altura.Text = mAltura.ToString();
+            volumen.Text = mvolumen.ToString();
         }
 
         public void DeterminarPuntos()

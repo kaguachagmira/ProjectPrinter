@@ -30,6 +30,8 @@ namespace ProjectPrinter
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboVelocidad = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboColor = new System.Windows.Forms.ComboBox();
             this.btnContorno = new System.Windows.Forms.Button();
@@ -89,8 +91,6 @@ namespace ProjectPrinter
             this.label16 = new System.Windows.Forms.Label();
             this.lstXy2 = new System.Windows.Forms.ListBox();
             this.lstXx2 = new System.Windows.Forms.ListBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.comboVelocidad = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.Grafico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picZ)).BeginInit();
@@ -131,6 +131,33 @@ namespace ProjectPrinter
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Setup";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // comboVelocidad
+            // 
+            this.comboVelocidad.BackColor = System.Drawing.SystemColors.Window;
+            this.comboVelocidad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboVelocidad.FormattingEnabled = true;
+            this.comboVelocidad.Items.AddRange(new object[] {
+            "Lento",
+            "Normal",
+            "Rápido",
+            "Muy Rápido"});
+            this.comboVelocidad.Location = new System.Drawing.Point(164, 88);
+            this.comboVelocidad.Name = "comboVelocidad";
+            this.comboVelocidad.Size = new System.Drawing.Size(68, 21);
+            this.comboVelocidad.TabIndex = 12;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.ForeColor = System.Drawing.Color.Silver;
+            this.label20.Location = new System.Drawing.Point(17, 91);
+            this.label20.Name = "label20";
+            this.label20.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label20.Size = new System.Drawing.Size(120, 13);
+            this.label20.TabIndex = 11;
+            this.label20.Text = "Selecciona la velocidad";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // label2
             // 
@@ -252,12 +279,12 @@ namespace ProjectPrinter
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(191, 16);
+            this.label19.Location = new System.Drawing.Point(184, 16);
             this.label19.Name = "label19";
             this.label19.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label19.Size = new System.Drawing.Size(34, 13);
+            this.label19.Size = new System.Drawing.Size(48, 13);
             this.label19.TabIndex = 16;
-            this.label19.Text = "Altura";
+            this.label19.Text = "Volumen";
             this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // txtAltura
@@ -270,7 +297,7 @@ namespace ProjectPrinter
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(134, 16);
+            this.label17.Location = new System.Drawing.Point(131, 16);
             this.label17.Name = "label17";
             this.label17.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label17.Size = new System.Drawing.Size(34, 13);
@@ -750,33 +777,6 @@ namespace ProjectPrinter
             this.lstXx2.Name = "lstXx2";
             this.lstXx2.Size = new System.Drawing.Size(30, 95);
             this.lstXx2.TabIndex = 2;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.ForeColor = System.Drawing.Color.Silver;
-            this.label20.Location = new System.Drawing.Point(17, 91);
-            this.label20.Name = "label20";
-            this.label20.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label20.Size = new System.Drawing.Size(120, 13);
-            this.label20.TabIndex = 11;
-            this.label20.Text = "Selecciona la velocidad";
-            this.label20.Click += new System.EventHandler(this.label20_Click);
-            // 
-            // comboVelocidad
-            // 
-            this.comboVelocidad.BackColor = System.Drawing.SystemColors.Window;
-            this.comboVelocidad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboVelocidad.FormattingEnabled = true;
-            this.comboVelocidad.Items.AddRange(new object[] {
-            "Lento",
-            "Normal",
-            "Rápido",
-            "Muy Rápido"});
-            this.comboVelocidad.Location = new System.Drawing.Point(164, 88);
-            this.comboVelocidad.Name = "comboVelocidad";
-            this.comboVelocidad.Size = new System.Drawing.Size(68, 21);
-            this.comboVelocidad.TabIndex = 12;
             // 
             // frmImpresion
             // 

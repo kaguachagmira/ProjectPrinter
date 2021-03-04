@@ -54,7 +54,7 @@ namespace ProjectPrinter
             }
         }
 
-            private void label1_Click(object sender, EventArgs e)
+         private void label1_Click(object sender, EventArgs e)
         {
 
         }
@@ -99,12 +99,16 @@ namespace ProjectPrinter
                                         lstXx1, lstXy1, lstXx2, lstXy2,
                                         lstYx1, lstYy1, lstYx2, lstYy2,lstPunto};
             PictureBox[] pictureBoxes = { picZ, picX, picY };
+            for (int i = 0; i < pictureBoxes.Length; i++)
+            {
+                pictureBoxes[i].Refresh();
+            }
             switch (opcionFigura)
             {
                 case 3:
                     objTriangulo.LeerDatos(txtLado, picInfo);
                     objTriangulo.AreayPerimetro();
-                    objTriangulo.ImprimirDatos(txtPerimetro, txtArea, txtAltura);
+                    objTriangulo.ImprimirDatos(txtPerimetro, txtArea, txtAltura, txtVolumen);
                     objTriangulo.CreadoraRelleno(pictureBoxes, comboColor, listaImpresion, comboVelocidad);
                     break;
                 case 4:
@@ -191,7 +195,7 @@ namespace ProjectPrinter
                                         lstXx1, lstXy1, lstXx2, lstXy2,
                                         lstYx1, lstYy1, lstYx2, lstYy2,lstPunto};
             this.txtLado.Clear();
-
+            
 
             for (int i = 0; i < pictureBoxes.Length; i++)
             {
